@@ -23,16 +23,11 @@
     <sequence>
         <property name="uri.var.eventId" expression="$func:eventId"/>
         <property name="uri.var.versionNumber" expression="$func:versionNumber"/>
-        <filter xpath="(not($ctx:uri.var.eventId = '' or (not(string($ctx:uri.var.eventId)))))">
-            <then>
-                <property name="uri.var.eventId"
-                          expression="fn:concat($ctx:uri.var.eventId, '&amp;')"/>
-            </then>
-        </filter>
+
         <call>
             <endpoint>
                 <http method="get"
-                      uri-template="{uri.var.apiUrl}/search/inventory/{+uri.var.versionNumber}?eventid={uri.var.eventId}"/>
+                      uri-template="{uri.var.apiUrl}/search/inventory/{+uri.var.versionNumber}?eventid={uri.var.eventId}&amp;"/>
             </endpoint>
         </call>
     </sequence>

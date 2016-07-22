@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1469168697682
+Bnd-LastModified: 1469169627047
 Build-Jdk: 1.7.0_79
 Built-By: nifras
 Bundle-ManifestVersion: 2
