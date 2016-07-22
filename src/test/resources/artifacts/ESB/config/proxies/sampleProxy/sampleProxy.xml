@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="StubHub"
+       transports="https,http"
+       statistics="disable"
+       trace="disable"
+       startOnLoad="true">
+    <target>
+        <inSequence>
+            <property name="apiUrl" expression="json-eval($.apiUrl)"/>
+            <property name="appToken" expression="json-eval($.appToken)"/>
+            <property name="eventId" expression="json-eval($.eventId)"/>
+            <property name="versionNumber" expression="json-eval($.versionNumber)"/>
+            <StubHub.init>
+                <apiUrl>{$ctx:apiUrl}</apiUrl>
+                <appToken>{$ctx:appToken}</appToken>
+            </StubHub.init>
+            <StubHub.searchInventory>
+                <eventId>{$ctx:eventId}</eventId>
+                <versionNumber>{$ctx:versionNumber}</versionNumber>
+            </StubHub.searchInventory>
+            <respond/>
+        </inSequence>
+        <outSequence>
+            <log/>
+            <send/>
+        </outSequence>
+    </target>
+    <description/>
+</proxy>

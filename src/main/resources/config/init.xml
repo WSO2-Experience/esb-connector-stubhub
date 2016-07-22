@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   Copyright (c) 2016, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+
+   WSO2 Inc. licenses this file to you under the Apache License,
+   Version 2.0 (the "License"); you may not use this file except
+   in compliance with the License.
+   You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing,
+   software distributed under the License is distributed on an
+   "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+   KIND, either express or implied. See the License for the
+   specific language governing permissions and limitations
+   under the License.
+-->
+<template name="init" onError="fault" xmlns="http://ws.apache.org/ns/synapse">
+	<parameter name="appToken" description="" />
+	<parameter name="apiUrl" description="" />
+	<parameter name="accessToken" description="" />
+	<parameter name="refreshToken" description="" />
+	<parameter name="consumerKey" description="" />
+	<parameter name="consumerSecret" description="" />
+	<parameter name="grant_type" description="" />
+	<parameter name="username" description="" />
+	<parameter name="password" description="" />
+	<parameter name="scope" description="" />
+
+	<sequence>
+		<property name="uri.var.accessToken" expression="$func:accessToken"/>
+		<property name="uri.var.appToken" expression="$func:appToken"/>
+		<property name="uri.var.apiUrl" expression="$func:apiUrl"/>
+		<property name="uri.var.refreshToken" expression="$func:refreshToken"/>
+		<property name="uri.var.consumerKey" expression="$func:consumerKey"/>
+		<property name="uri.var.consumerSecret" expression="$func:consumerSecret"/>
+		<property name="uri.var.grant_type" expression="$func:grant_type"/>
+		<property name="uri.var.username" expression="$func:username"/>
+		<property name="uri.var.password" expression="$func:password"/>
+		<property name="uri.var.scope" expression="$func:scope"/>
+
+		<header name="Authorization"
+				expression="fn:concat('Bearer ', $ctx:uri.var.appToken )"
+				scope="transport"/>
+		<header name="Content-Type" value="application/json" scope="transport"/>
+		<header name="Accept" value="application/json" scope="transport"/>
+
+	</sequence>
+</template>
