@@ -19,15 +19,110 @@
     <!--Uri Template parameter-->
     <parameter name="eventId" description=""/>
     <parameter name="versionNumber" description="" />
+    <parameter name="zoneIdList" description="" />
+    <parameter name="sectionIdList" description="" />
+    <parameter name="quantity" description="" />
+    <parameter name="priceMin" description="" />
+    <parameter name="priceMax" description="" />
+    <parameter name="listingAttributeList" description="" />
+    <parameter name="listingAttributeCategoryList" description="" />
+    <parameter name="deliveryTypeList" description="" />
+    <parameter name="sort" description="" />
+    <parameter name="start" description="" />
+    <parameter name="rows" description="" />
+    <parameter name="zoneStats" description="" />
+    <parameter name="sectionStats" description="" />
+    <parameter name="pricingSummary" description="" />
+
+
 
     <sequence>
         <property name="uri.var.eventId" expression="$func:eventId"/>
         <property name="uri.var.versionNumber" expression="$func:versionNumber"/>
+        <property name="uri.var.zoneIdList" expression="$func:zoneIdList"/>
+        <property name="uri.var.sectionIdList" expression="$func:sectionIdList"/>
+        <property name="uri.var.quantity" expression="$func:quantity"/>
+        <property name="uri.var.priceMin" expression="$func:priceMin"/>
+        <property name="uri.var.priceMax" expression="$func:priceMax"/>
+        <property name="uri.var.listingAttributeList" expression="$func:listingAttributeList"/>
+        <property name="uri.var.listingAttributeCategoryList" expression="$func:listingAttributeCategoryList"/>
+        <property name="uri.var.deliveryTypeList" expression="$func:deliveryTypeList"/>
+        <property name="uri.var.sort" expression="$func:sort"/>
+        <property name="uri.var.start" expression="$func:start"/>
+        <property name="uri.var.rows" expression="$func:rows"/>
+        <property name="uri.var.zoneStats" expression="$func:zoneStats"/>
+        <property name="uri.var.sectionStats" expression="$func:sectionStats"/>
+        <property name="uri.var.pricingSummary" expression="$func:pricingSummary"/>
+        <property name="uri.var.params" value=""/>
 
+        <script language="js">
+            <![CDATA[
+            var params = mc.getProperty('uri.var.params');
+            var zoneIdList = mc.getProperty('uri.var.zoneIdList');
+            var sectionIdList = mc.getProperty('uri.var.sectionIdList');
+            var quantity = mc.getProperty('uri.var.quantity');
+            var priceMin = mc.getProperty('uri.var.priceMin');
+            var priceMax = mc.getProperty('uri.var.priceMax');
+            var listingAttributeList = mc.getProperty('uri.var.listingAttributeList');
+            var listingAttributeCategoryList = mc.getProperty('uri.var.listingAttributeCategoryList');
+            var deliveryTypeList = mc.getProperty('uri.var.deliveryTypeList');
+            var sort = mc.getProperty('uri.var.sort');
+            var start = mc.getProperty('uri.var.start');
+            var rows = mc.getProperty('uri.var.rows');
+            var zoneStats = mc.getProperty('uri.var.zoneStats');
+            var sectionStats = mc.getProperty('uri.var.sectionStats');
+            var pricingSummary = mc.getProperty('uri.var.pricingSummary');
+
+            if (zoneIdList != null && zoneIdList != "") {
+                params += "&zoneidlist=" + zoneIdList;
+            }
+            if (sectionIdList != null && sectionIdList != "") {
+                params += "&sectionidlist=" + sectionIdList;
+            }
+            if (quantity != null && quantity != "") {
+                params += "&quantity=" + quantity;
+            }
+            if (priceMin != null && priceMin != "") {
+                params += "&pricemin=" + priceMin;
+            }
+            if (priceMax != null && priceMax != "") {
+                params += "&pricemax=" + priceMax;
+            }
+            if (listingAttributeList != null && listingAttributeList != "") {
+                params += "&listingattributelist=" + listingAttributeList;
+            }
+            if (listingAttributeList != null && listingAttributeList != "") {
+                params += "&listingattributecategorylist=" + listingAttributeCategoryList;
+            }
+            if (listingAttributeList != null && listingAttributeList != "") {
+                params += "&deliverytypelist=" + deliveryTypeList;
+            }
+            if (listingAttributeList != null && listingAttributeList != "") {
+                params += "&sort=" + sort;
+            }
+            if (listingAttributeList != null && listingAttributeList != "") {
+                params += "&start=" + start;
+            }
+            if (listingAttributeList != null && listingAttributeList != "") {
+                params += "&rows=" + rows;
+            }
+            if (listingAttributeList != null && listingAttributeList != "") {
+                params += "&zonestats=" + zoneStats;
+            }
+            if (listingAttributeList != null && listingAttributeList != "") {
+                params += "&sectionstats=" + sectionStats;
+            }
+            if (listingAttributeList != null && listingAttributeList != "") {
+                params += "&pricingsummary=" + pricingSummary;
+            }
+
+            mc.setProperty('uri.var.params', params);
+           ]]>
+        </script>
         <call>
             <endpoint>
                 <http method="get"
-                      uri-template="{uri.var.apiUrl}/search/inventory/{+uri.var.versionNumber}?eventid={uri.var.eventId}&amp;"/>
+                      uri-template="legacy-encoding:{uri.var.apiUrl}/search/inventory/{uri.var.versionNumber}?eventid={uri.var.eventId}{uri.var.params}"/>
             </endpoint>
         </call>
     </sequence>

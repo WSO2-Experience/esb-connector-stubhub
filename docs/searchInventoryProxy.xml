@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="StubHub"
+       transports="https,http"
+       statistics="disable"
+       trace="disable"
+       startOnLoad="true">
+    <target>
+        <inSequence>
+            <property name="apiUrl" expression="json-eval($.apiUrl)"/>
+            <property name="appToken" expression="json-eval($.appToken)"/>
+            <property name="eventId" expression="json-eval($.eventId)"/>
+            <property name="versionNumber" expression="json-eval($.versionNumber)"/>
+            <property name="zoneIdList" expression="json-eval($.zoneIdList)"/>
+            <property name="sectionIdList" expression="json-eval($.sectionIdList)"/>
+            <property name="quantity" expression="json-eval($.quantity)"/>
+            <property name="priceMin" expression="json-eval($.priceMin)"/>
+            <property name="priceMax" expression="json-eval($.priceMax)"/>
+            <property name="listingAttributeList" expression="json-eval($.listingAttributeList)"/>
+            <property name="listingAttributeCategoryList" expression="json-eval($.listingAttributeCategoryList)"/>
+            <property name="deliveryTypeList" expression="json-eval($.deliveryTypeList)"/>
+            <property name="sort" expression="json-eval($.sort)"/>
+            <property name="start" expression="json-eval($.start)"/>
+            <property name="rows" expression="json-eval($.rows)"/>
+            <property name="zoneStats" expression="json-eval($.zoneStats)"/>
+            <property name="sectionStats" expression="json-eval($.sectionStats)"/>
+            <property name="pricingSummary" expression="json-eval($.pricingSummary)"/>
+            <StubHub.init>
+                <apiUrl>{$ctx:apiUrl}</apiUrl>
+                <appToken>{$ctx:appToken}</appToken>
+            </StubHub.init>
+            <StubHub.searchInventory>
+                <eventId>{$ctx:eventId}</eventId>
+                <versionNumber>{$ctx:versionNumber}</versionNumber>
+                <zoneIdList>{$ctx:zoneIdList}</zoneIdList>
+                <sectionIdList>{$ctx:sectionIdList}</sectionIdList>
+                <quantity>{$ctx:quantity}</quantity>
+                <priceMin>{$ctx:priceMin}</priceMin>
+                <priceMax>{$ctx:priceMax}</priceMax>
+                <listingAttributeList>{$ctx:listingAttributeList}</listingAttributeList>
+                <listingAttributeCategoryList>{$ctx:listingAttributeCategoryList}</listingAttributeCategoryList>
+                <deliveryTypeList>{$ctx:deliveryTypeList}</deliveryTypeList>
+                <sort>{$ctx:sort}</sort>
+                <start>{$ctx:start}</start>
+                <rows>{$ctx:rows}</rows>
+                <zoneStats>{$ctx:zoneStats}</zoneStats>
+                <sectionStats>{$ctx:sectionStats}</sectionStats>
+                <pricingSummary>{$ctx:pricingSummary}</pricingSummary>
+            </StubHub.searchInventory>
+            <respond/>
+        </inSequence>
+        <outSequence>
+            <log/>
+            <send/>
+        </outSequence>
+    </target>
+    <description/>
+</proxy>
