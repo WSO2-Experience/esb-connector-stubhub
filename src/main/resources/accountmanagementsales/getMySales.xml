@@ -1,0 +1,79 @@
+<!--
+   Copyright (c) 2016, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+
+   WSO2 Inc. licenses this file to you under the Apache License,
+   Version 2.0 (the "License"); you may not use this file except
+   in compliance with the License.
+   You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing,
+   software distributed under the License is distributed on an
+   "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+   KIND, either express or implied. See the License for the
+   specific language governing permissions and limitations
+   under the License.
+-->
+<template xmlns="http://ws.apache.org/ns/synapse" name="getMySales">
+    <!--Uri Template parameter-->
+    <parameter name="userId" description=""/>
+    <parameter  name="versionNumber" description="" />
+
+    <!-- Query parameters -->
+    <parameter name="includePending" description=""/>
+    <parameter name="filters" description=""/>
+    <parameter name="sort" description=""/>
+    <parameter name="start" description=""/>
+    <parameter name="rows" description=""/>
+
+    <sequence>
+        <property name="uri.var.userId" expression="$func:userId"/>
+        <property name="uri.var.versionNumber" expression="$func:versionNumber"/>
+        <property name="uri.var.includePending" expression="$func:includePending"/>
+        <property name="uri.var.filters" expression="$func:filters"/>
+        <property name="uri.var.sort" expression="$func:sort"/>
+        <property name="uri.var.start" expression="$func:start"/>
+        <property name="uri.var.rows" expression="$func:rows"/>
+        <property name="uri.var.params" value=""/>
+
+        <script language="js">
+            <![CDATA[
+            var params = mc.getProperty('uri.var.params');
+            var includePending = mc.getProperty('uri.var.includePending');
+            var filters = mc.getProperty('uri.var.filters');
+            var sort = mc.getProperty('uri.var.sort');
+            var start = mc.getProperty('uri.var.start');
+            var rows = mc.getProperty('uri.var.rows');
+            if (includePending != null && includePending != "") {
+                params += "includePending=" + includePending + "&";
+            }
+            if (filters != null && filters != "") {
+                params += "filters=" + filters + "&";
+            }
+            if (sort != null && sort != "") {
+                params += "sort=" + sort + "&";
+            }
+            if (start != null && start != "") {
+                params += "start=" + start + "&";
+            }
+            if (rows != null && rows != "") {
+                params += "rows=" + rows + "&";
+            }
+
+             mc.setProperty('uri.var.params', params);
+           ]]>
+        </script>
+
+        <call>
+            <endpoint>
+                <http method="get"
+                      uri-template="legacy-encoding:{uri.var.apiUrl}/accountmanagement/sales/{+uri.var.versionNumber}/seller/{+uri.var.userId}?{uri.var.params}"/>
+            </endpoint>
+        </call>
+
+
+    </sequence>
+</template>
+
+<!-- Not Access Access Denied -->

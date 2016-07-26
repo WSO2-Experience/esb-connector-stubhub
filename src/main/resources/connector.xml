@@ -22,7 +22,9 @@
         <dependency component="event" />
         <dependency component="venue" />
         <dependency component="inventory" />
-
+        <dependency component="accountmanagement" />
+        <dependency component="accountmanagementsales" />
+        <dependency component="usercustomer" />
         <description>StubHub Connector Library</description>
     </component>
     <icon>icon/icon.png</icon>

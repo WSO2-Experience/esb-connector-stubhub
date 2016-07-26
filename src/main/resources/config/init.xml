@@ -43,6 +43,9 @@
 		<header name="Authorization"
 				expression="fn:concat('Bearer ', $ctx:uri.var.appToken )"
 				scope="transport"/>
+		<header name="Authorization"
+				expression="fn:concat('Bearer ', $ctx:uri.var.accessToken )"
+				scope="transport"/>
 		<header name="Content-Type" value="application/json" scope="transport"/>
 		<header name="Accept" value="application/json" scope="transport"/>
 

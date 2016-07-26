@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1469264414659
+Bnd-LastModified: 1469505814355
 Build-Jdk: 1.7.0_79
 Built-By: nifras
 Bundle-ManifestVersion: 2
@@ -7,17 +7,13 @@ Bundle-Name: org.wso2.carbon.esb.connector.stubhub
 Bundle-SymbolicName: org.wso2.carbon.esb.connector.stubhub
 Bundle-Version: 1.0.0
 Created-By: Apache Maven Bundle Plugin
-Export-Package: org.wso2.carbon.esb.connector;uses:="org.apache.synapse,
- org.wso2.carbon.connector.core";version="1.0.0"
-Import-Package: org.apache.commons.logging;version="[1.2,2)",org.apache.
- synapse,org.wso2.carbon.connector.core;resolution:=optional;version="[4
- .4,5)",org.apache.axis2.rpc.receivers;version="1.7.1",org.apache.axis2;
- version="1.7.1",org.apache.axis2.description;version="1.7.1",org.apache
- .axis2.engine;version="1.7.1",org.apache.axis2.context;version="1.7.1",
- org.apache.synapse.config,org.apache.synapse.config.xml,org.apache.syna
- pse.core,org.apache.synapse.core.axis2,org.apache.synapse.mediators.bas
- e,org.apache.axis2.transport.base,org.wso2.carbon.core;version="[4.4,5)
- ",org.wso2.carbon.registry.core.service;version="1.0.1",javax.xml.soap;
- version="1.0.0"
-Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.5))"
+Import-Package: org.apache.axis2.rpc.receivers;version="1.7.1",org.apach
+ e.axis2;version="1.7.1",org.apache.axis2.description;version="1.7.1",or
+ g.apache.axis2.engine;version="1.7.1",org.apache.axis2.context;version=
+ "1.7.1",org.apache.commons.logging;version="[1.2,2)",org.apache.synapse
+ ,org.apache.synapse.config,org.apache.synapse.config.xml,org.apache.syn
+ apse.core,org.apache.synapse.core.axis2,org.apache.synapse.mediators.ba
+ se,org.apache.axis2.transport.base,org.wso2.carbon.core;version="[4.4,5
+ )",org.wso2.carbon.registry.core.service;version="1.0.1",javax.xml.soap
+ ;version="1.0.0"
 Tool: Bnd-3.2.0.201605172007

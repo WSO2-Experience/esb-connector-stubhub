@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0" errors="0" skipped="0" tests="0" name="TestSuite">
+<testsuite failures="1" time="32.408" errors="0" skipped="1" tests="2" name="TestSuite">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/jdk1.7.0_79/jre/lib/amd64"/>
@@ -14,7 +14,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/home/nifras/Documents/ESB-Projects/StubHub/org.wso2.carbon.esb.connector.stubhub"/>
+    <property name="user.dir" value="/home/nifras/Documents/ESB-Projects/StubHubII/org.wso2.carbon.esb.connector.stubhub"/>
     <property name="java.runtime.version" value="1.7.0_79-b15"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="/usr/lib/jvm/jdk1.7.0_79/jre/lib/endorsed"/>
@@ -30,7 +30,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="51.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="4.4.0-21-generic"/>
+    <property name="os.version" value="4.4.0-31-generic"/>
     <property name="user.home" value="/home/nifras"/>
     <property name="user.timezone" value="Asia/Colombo"/>
     <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
@@ -59,4 +59,206 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
+  <testcase time="32.407" classname="org.wso2.carbon.connector.StubHubIntegrationTest" name="setEnvironment">
+    <failure type="java.lang.NullPointerException">java.lang.NullPointerException
+	at org.wso2.connector.integration.test.base.ConnectorIntegrationTestBase.init(ConnectorIntegrationTestBase.java:194)
+	at org.wso2.carbon.connector.StubHubIntegrationTest.setEnvironment(StubHubIntegrationTest.java:41)
+</failure>
+    <system-out>[2016-07-26 09:33:00,578]  INFO {org.wso2.carbon.automation.core.PlatformExecutionManager} -  ---------------Test Execution Started --------------------------
+[2016-07-26 09:33:00,586]  INFO {org.wso2.carbon.automation.core.ServerGroupManager} -  Carbon zip file - /home/nifras/Documents/ESB-Projects/StubHubII/org.wso2.carbon.esb.connector.stubhub/repository/wso2esb-4.9.0.zip
+[2016-07-26 09:33:00,596] ERROR {org.wso2.carbon.automation.core.utils.fileutils.ArchiveExtractor} -  Error on archive extraction 
+java.io.FileNotFoundException: /home/nifras/Documents/ESB-Projects/StubHubII/org.wso2.carbon.esb.connector.stubhub/repository/wso2esb-4.9.0.zip (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:146)
+	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:101)
+	at org.wso2.carbon.automation.core.utils.fileutils.ArchiveExtractor.extractFile(ArchiveExtractor.java:43)
+	at org.wso2.carbon.automation.core.utils.serverutils.ServerUtils.setUpCarbonHome(ServerUtils.java:177)
+	at org.wso2.carbon.automation.core.ServerGroupManager.startServer(ServerGroupManager.java:84)
+	at org.wso2.carbon.automation.core.ServerGroupManager.startServersForBuilder(ServerGroupManager.java:98)
+	at org.wso2.carbon.automation.core.PlatformExecutionManager.startSevers(PlatformExecutionManager.java:187)
+	at org.wso2.carbon.automation.core.PlatformExecutionManager.onExecutionStart(PlatformExecutionManager.java:76)
+	at org.testng.TestNG.runExecutionListeners(TestNG.java:1032)
+	at org.testng.TestNG.run(TestNG.java:983)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:178)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:96)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+[2016-07-26 09:33:00,598] ERROR {org.wso2.carbon.automation.core.PlatformExecutionManager} -  Unable to start servers 
+java.io.IOException: Error on archive extraction 
+	at org.wso2.carbon.automation.core.utils.fileutils.ArchiveExtractor.extractFile(ArchiveExtractor.java:85)
+	at org.wso2.carbon.automation.core.utils.serverutils.ServerUtils.setUpCarbonHome(ServerUtils.java:177)
+	at org.wso2.carbon.automation.core.ServerGroupManager.startServer(ServerGroupManager.java:84)
+	at org.wso2.carbon.automation.core.ServerGroupManager.startServersForBuilder(ServerGroupManager.java:98)
+	at org.wso2.carbon.automation.core.PlatformExecutionManager.startSevers(PlatformExecutionManager.java:187)
+	at org.wso2.carbon.automation.core.PlatformExecutionManager.onExecutionStart(PlatformExecutionManager.java:76)
+	at org.testng.TestNG.runExecutionListeners(TestNG.java:1032)
+	at org.testng.TestNG.run(TestNG.java:983)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:178)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:96)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.io.FileNotFoundException: /home/nifras/Documents/ESB-Projects/StubHubII/org.wso2.carbon.esb.connector.stubhub/repository/wso2esb-4.9.0.zip (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:146)
+	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:101)
+	at org.wso2.carbon.automation.core.utils.fileutils.ArchiveExtractor.extractFile(ArchiveExtractor.java:43)
+	... 19 more
+[2016-07-26 09:33:00,854]  INFO {org.wso2.carbon.automation.core.PlatformSuiteManager} -  **********Starting executing test Suite ESBTestSuite on user***********
+[2016-07-26 09:33:00,855]  INFO {org.wso2.carbon.automation.core.UserPopulator} -  Populating Users....
+[2016-07-26 09:33:01,088]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: wso2caching-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.caching.core/4.2.0/org.wso2.carbon.caching.core-4.2.0.jar
+[2016-07-26 09:33:01,088]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: wso2caching-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.caching.core/4.2.0/org.wso2.carbon.caching.core-4.2.0.jar
+[2016-07-26 09:33:01,093]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: ComponentMgtModule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.feature.mgt.services/4.2.0/org.wso2.carbon.feature.mgt.services-4.2.0.jar
+[2016-07-26 09:33:01,093]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: ComponentMgtModule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.feature.mgt.services/4.2.0/org.wso2.carbon.feature.mgt.services-4.2.0.jar
+[2016-07-26 09:33:01,115]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rampart - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-core/1.6.1.wso2v9/rampart-core-1.6.1.wso2v9.jar
+[2016-07-26 09:33:01,115]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rampart - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-core/1.6.1.wso2v9/rampart-core-1.6.1.wso2v9.jar
+[2016-07-26 09:33:01,125]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rahas - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-trust/1.6.1.wso2v9/rampart-trust-1.6.1.wso2v9.jar
+[2016-07-26 09:33:01,125]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rahas - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-trust/1.6.1.wso2v9/rampart-trust-1.6.1.wso2v9.jar
+[2016-07-26 09:33:01,137]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: uddiversionmodule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.uddi/4.2.0/org.wso2.carbon.registry.uddi-4.2.0.jar
+[2016-07-26 09:33:01,137]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: uddiversionmodule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.uddi/4.2.0/org.wso2.carbon.registry.uddi-4.2.0.jar
+[2016-07-26 09:33:01,142]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: pagination-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.server/4.2.0/org.wso2.carbon.registry.server-4.2.0.jar
+[2016-07-26 09:33:01,142]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: pagination-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.server/4.2.0/org.wso2.carbon.registry.server-4.2.0.jar
+[2016-07-26 09:33:01,543]  INFO {org.wso2.carbon.automation.api.clients.authenticators.AuthenticatorClient} -  Login Successful
+[2016-07-26 09:33:01,573]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: wso2caching-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.caching.core/4.2.0/org.wso2.carbon.caching.core-4.2.0.jar
+[2016-07-26 09:33:01,573]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: wso2caching-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.caching.core/4.2.0/org.wso2.carbon.caching.core-4.2.0.jar
+[2016-07-26 09:33:01,575]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: ComponentMgtModule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.feature.mgt.services/4.2.0/org.wso2.carbon.feature.mgt.services-4.2.0.jar
+[2016-07-26 09:33:01,575]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: ComponentMgtModule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.feature.mgt.services/4.2.0/org.wso2.carbon.feature.mgt.services-4.2.0.jar
+[2016-07-26 09:33:01,585]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rampart - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-core/1.6.1.wso2v9/rampart-core-1.6.1.wso2v9.jar
+[2016-07-26 09:33:01,585]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rampart - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-core/1.6.1.wso2v9/rampart-core-1.6.1.wso2v9.jar
+[2016-07-26 09:33:01,593]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rahas - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-trust/1.6.1.wso2v9/rampart-trust-1.6.1.wso2v9.jar
+[2016-07-26 09:33:01,593]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rahas - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-trust/1.6.1.wso2v9/rampart-trust-1.6.1.wso2v9.jar
+[2016-07-26 09:33:01,603]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: uddiversionmodule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.uddi/4.2.0/org.wso2.carbon.registry.uddi-4.2.0.jar
+[2016-07-26 09:33:01,603]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: uddiversionmodule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.uddi/4.2.0/org.wso2.carbon.registry.uddi-4.2.0.jar
+[2016-07-26 09:33:01,606]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: pagination-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.server/4.2.0/org.wso2.carbon.registry.server-4.2.0.jar
+[2016-07-26 09:33:01,606]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: pagination-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.server/4.2.0/org.wso2.carbon.registry.server-4.2.0.jar
+[2016-07-26 09:33:01,617]  INFO {org.wso2.carbon.automation.core.UserPopulator} -  Populate user to ESB server
+[2016-07-26 09:33:01,635]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: wso2caching-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.caching.core/4.2.0/org.wso2.carbon.caching.core-4.2.0.jar
+[2016-07-26 09:33:01,635]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: wso2caching-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.caching.core/4.2.0/org.wso2.carbon.caching.core-4.2.0.jar
+[2016-07-26 09:33:01,638]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: ComponentMgtModule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.feature.mgt.services/4.2.0/org.wso2.carbon.feature.mgt.services-4.2.0.jar
+[2016-07-26 09:33:01,638]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: ComponentMgtModule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.feature.mgt.services/4.2.0/org.wso2.carbon.feature.mgt.services-4.2.0.jar
+[2016-07-26 09:33:01,647]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rampart - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-core/1.6.1.wso2v9/rampart-core-1.6.1.wso2v9.jar
+[2016-07-26 09:33:01,647]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rampart - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-core/1.6.1.wso2v9/rampart-core-1.6.1.wso2v9.jar
+[2016-07-26 09:33:01,654]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rahas - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-trust/1.6.1.wso2v9/rampart-trust-1.6.1.wso2v9.jar
+[2016-07-26 09:33:01,654]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rahas - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-trust/1.6.1.wso2v9/rampart-trust-1.6.1.wso2v9.jar
+[2016-07-26 09:33:01,665]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: uddiversionmodule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.uddi/4.2.0/org.wso2.carbon.registry.uddi-4.2.0.jar
+[2016-07-26 09:33:01,665]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: uddiversionmodule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.uddi/4.2.0/org.wso2.carbon.registry.uddi-4.2.0.jar
+[2016-07-26 09:33:01,667]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: pagination-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.server/4.2.0/org.wso2.carbon.registry.server-4.2.0.jar
+[2016-07-26 09:33:01,667]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: pagination-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.server/4.2.0/org.wso2.carbon.registry.server-4.2.0.jar
+[2016-07-26 09:33:01,696]  INFO {org.wso2.carbon.automation.api.clients.authenticators.AuthenticatorClient} -  Login Successful
+[2016-07-26 09:33:01,733]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: wso2caching-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.caching.core/4.2.0/org.wso2.carbon.caching.core-4.2.0.jar
+[2016-07-26 09:33:01,733]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: wso2caching-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.caching.core/4.2.0/org.wso2.carbon.caching.core-4.2.0.jar
+[2016-07-26 09:33:01,735]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: ComponentMgtModule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.feature.mgt.services/4.2.0/org.wso2.carbon.feature.mgt.services-4.2.0.jar
+[2016-07-26 09:33:01,735]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: ComponentMgtModule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.feature.mgt.services/4.2.0/org.wso2.carbon.feature.mgt.services-4.2.0.jar
+[2016-07-26 09:33:01,743]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rampart - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-core/1.6.1.wso2v9/rampart-core-1.6.1.wso2v9.jar
+[2016-07-26 09:33:01,743]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rampart - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-core/1.6.1.wso2v9/rampart-core-1.6.1.wso2v9.jar
+[2016-07-26 09:33:01,750]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rahas - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-trust/1.6.1.wso2v9/rampart-trust-1.6.1.wso2v9.jar
+[2016-07-26 09:33:01,750]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rahas - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-trust/1.6.1.wso2v9/rampart-trust-1.6.1.wso2v9.jar
+[2016-07-26 09:33:01,760]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: uddiversionmodule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.uddi/4.2.0/org.wso2.carbon.registry.uddi-4.2.0.jar
+[2016-07-26 09:33:01,760]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: uddiversionmodule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.uddi/4.2.0/org.wso2.carbon.registry.uddi-4.2.0.jar
+[2016-07-26 09:33:01,762]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: pagination-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.server/4.2.0/org.wso2.carbon.registry.server-4.2.0.jar
+[2016-07-26 09:33:01,762]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: pagination-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.server/4.2.0/org.wso2.carbon.registry.server-4.2.0.jar
+[2016-07-26 09:33:01,789]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: wso2caching-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.caching.core/4.2.0/org.wso2.carbon.caching.core-4.2.0.jar
+[2016-07-26 09:33:01,789]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: wso2caching-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.caching.core/4.2.0/org.wso2.carbon.caching.core-4.2.0.jar
+[2016-07-26 09:33:01,792]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: ComponentMgtModule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.feature.mgt.services/4.2.0/org.wso2.carbon.feature.mgt.services-4.2.0.jar
+[2016-07-26 09:33:01,792]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: ComponentMgtModule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.feature.mgt.services/4.2.0/org.wso2.carbon.feature.mgt.services-4.2.0.jar
+[2016-07-26 09:33:01,799]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rampart - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-core/1.6.1.wso2v9/rampart-core-1.6.1.wso2v9.jar
+[2016-07-26 09:33:01,799]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rampart - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-core/1.6.1.wso2v9/rampart-core-1.6.1.wso2v9.jar
+[2016-07-26 09:33:01,805]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rahas - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-trust/1.6.1.wso2v9/rampart-trust-1.6.1.wso2v9.jar
+[2016-07-26 09:33:01,805]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rahas - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-trust/1.6.1.wso2v9/rampart-trust-1.6.1.wso2v9.jar
+[2016-07-26 09:33:01,817]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: uddiversionmodule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.uddi/4.2.0/org.wso2.carbon.registry.uddi-4.2.0.jar
+[2016-07-26 09:33:01,817]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: uddiversionmodule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.uddi/4.2.0/org.wso2.carbon.registry.uddi-4.2.0.jar
+[2016-07-26 09:33:01,819]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: pagination-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.server/4.2.0/org.wso2.carbon.registry.server-4.2.0.jar
+[2016-07-26 09:33:01,819]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: pagination-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.server/4.2.0/org.wso2.carbon.registry.server-4.2.0.jar
+[2016-07-26 09:33:01,875]  INFO {org.wso2.carbon.automation.api.clients.user.mgt.UserManagementClient} -  Role name testRole already exists
+[2016-07-26 09:33:01,912]  INFO {org.wso2.carbon.automation.api.clients.user.mgt.UserManagementClient} -  User name adminuser already exists
+[2016-07-26 09:33:01,947]  INFO {org.wso2.carbon.automation.api.clients.user.mgt.UserManagementClient} -  User name testuser2 already exists
+[2016-07-26 09:33:01,979]  INFO {org.wso2.carbon.automation.api.clients.user.mgt.UserManagementClient} -  User name testuser3 already exists
+[2016-07-26 09:33:02,004]  INFO {org.wso2.carbon.automation.api.clients.user.mgt.UserManagementClient} -  User name testuser4 already exists
+[2016-07-26 09:33:02,034]  INFO {org.wso2.carbon.automation.api.clients.user.mgt.UserManagementClient} -  User name testuser5 already exists
+[2016-07-26 09:33:02,062]  INFO {org.wso2.carbon.automation.api.clients.user.mgt.UserManagementClient} -  User name testuser6 already exists
+[2016-07-26 09:33:02,087]  INFO {org.wso2.carbon.automation.api.clients.user.mgt.UserManagementClient} -  User name testuser7 already exists
+[2016-07-26 09:33:02,114]  INFO {org.wso2.carbon.automation.api.clients.user.mgt.UserManagementClient} -  User name testuser8 already exists
+[2016-07-26 09:33:02,139]  INFO {org.wso2.carbon.automation.api.clients.user.mgt.UserManagementClient} -  User name testuser9 already exists
+[2016-07-26 09:33:02,165]  INFO {org.wso2.carbon.automation.api.clients.user.mgt.UserManagementClient} -  User name testuser10 already exists
+[2016-07-26 09:33:02,189]  INFO {org.wso2.carbon.automation.api.clients.user.mgt.UserManagementClient} -  User name testuser11 already exists
+[2016-07-26 09:33:02,213]  INFO {org.wso2.carbon.automation.api.clients.user.mgt.UserManagementClient} -  User name testuser12 already exists
+[2016-07-26 09:33:02,239]  INFO {org.wso2.carbon.automation.api.clients.user.mgt.UserManagementClient} -  User name testuser13 already exists
+[2016-07-26 09:33:02,263]  INFO {org.wso2.carbon.automation.api.clients.user.mgt.UserManagementClient} -  User name testuser14 already exists
+[2016-07-26 09:33:02,293]  INFO {org.wso2.carbon.automation.api.clients.user.mgt.UserManagementClient} -  User name testuser15 already exists
+[2016-07-26 09:33:02,294]  INFO {org.wso2.carbon.automation.core.PlatformTestManager} -  --------------Start executing test class Sample-Connector-Test on suiteESBTestSuite--------
+[2016-07-26 09:33:02,332]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: wso2caching-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.caching.core/4.2.0/org.wso2.carbon.caching.core-4.2.0.jar
+[2016-07-26 09:33:02,332]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: wso2caching-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.caching.core/4.2.0/org.wso2.carbon.caching.core-4.2.0.jar
+[2016-07-26 09:33:02,335]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: ComponentMgtModule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.feature.mgt.services/4.2.0/org.wso2.carbon.feature.mgt.services-4.2.0.jar
+[2016-07-26 09:33:02,335]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: ComponentMgtModule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.feature.mgt.services/4.2.0/org.wso2.carbon.feature.mgt.services-4.2.0.jar
+[2016-07-26 09:33:02,341]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rampart - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-core/1.6.1.wso2v9/rampart-core-1.6.1.wso2v9.jar
+[2016-07-26 09:33:02,341]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rampart - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-core/1.6.1.wso2v9/rampart-core-1.6.1.wso2v9.jar
+[2016-07-26 09:33:02,347]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rahas - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-trust/1.6.1.wso2v9/rampart-trust-1.6.1.wso2v9.jar
+[2016-07-26 09:33:02,347]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rahas - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-trust/1.6.1.wso2v9/rampart-trust-1.6.1.wso2v9.jar
+[2016-07-26 09:33:02,355]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: uddiversionmodule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.uddi/4.2.0/org.wso2.carbon.registry.uddi-4.2.0.jar
+[2016-07-26 09:33:02,355]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: uddiversionmodule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.uddi/4.2.0/org.wso2.carbon.registry.uddi-4.2.0.jar
+[2016-07-26 09:33:02,357]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: pagination-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.server/4.2.0/org.wso2.carbon.registry.server-4.2.0.jar
+[2016-07-26 09:33:02,357]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: pagination-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.server/4.2.0/org.wso2.carbon.registry.server-4.2.0.jar
+[2016-07-26 09:33:02,380]  INFO {org.wso2.carbon.automation.api.clients.authenticators.AuthenticatorClient} -  Login Successful
+[2016-07-26 09:33:02,385]  INFO {org.apache.axis2.deployment.FileSystemConfigurator} -  Couldn&apos;t find repository location &apos;/home/nifras/Documents/ESB-Projects/StubHubII/org.wso2.carbon.esb.connector.stubhub/src/test/resources//client&apos;
+[2016-07-26 09:33:02,385]  INFO {org.apache.axis2.deployment.FileSystemConfigurator} -  Couldn&apos;t find repository location &apos;/home/nifras/Documents/ESB-Projects/StubHubII/org.wso2.carbon.esb.connector.stubhub/src/test/resources//client&apos;
+[2016-07-26 09:33:02,386] ERROR {org.wso2.carbon.automation.utils.axis2client.ConfigurationContextProvider} -  org.apache.axis2.AxisFault: Couldn&apos;t find repository location &apos;/home/nifras/Documents/ESB-Projects/StubHubII/org.wso2.carbon.esb.connector.stubhub/src/test/resources//client&apos;
+[2016-07-26 09:33:02,405]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: wso2caching-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.caching.core/4.2.0/org.wso2.carbon.caching.core-4.2.0.jar
+[2016-07-26 09:33:02,405]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: wso2caching-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.caching.core/4.2.0/org.wso2.carbon.caching.core-4.2.0.jar
+[2016-07-26 09:33:02,408]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: ComponentMgtModule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.feature.mgt.services/4.2.0/org.wso2.carbon.feature.mgt.services-4.2.0.jar
+[2016-07-26 09:33:02,408]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: ComponentMgtModule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.feature.mgt.services/4.2.0/org.wso2.carbon.feature.mgt.services-4.2.0.jar
+[2016-07-26 09:33:02,417]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rampart - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-core/1.6.1.wso2v9/rampart-core-1.6.1.wso2v9.jar
+[2016-07-26 09:33:02,417]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rampart - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-core/1.6.1.wso2v9/rampart-core-1.6.1.wso2v9.jar
+[2016-07-26 09:33:02,423]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rahas - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-trust/1.6.1.wso2v9/rampart-trust-1.6.1.wso2v9.jar
+[2016-07-26 09:33:02,423]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rahas - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-trust/1.6.1.wso2v9/rampart-trust-1.6.1.wso2v9.jar
+[2016-07-26 09:33:02,430]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: uddiversionmodule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.uddi/4.2.0/org.wso2.carbon.registry.uddi-4.2.0.jar
+[2016-07-26 09:33:02,430]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: uddiversionmodule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.uddi/4.2.0/org.wso2.carbon.registry.uddi-4.2.0.jar
+[2016-07-26 09:33:02,432]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: pagination-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.server/4.2.0/org.wso2.carbon.registry.server-4.2.0.jar
+[2016-07-26 09:33:02,432]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: pagination-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.server/4.2.0/org.wso2.carbon.registry.server-4.2.0.jar
+[2016-07-26 09:33:02,459]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: wso2caching-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.caching.core/4.2.0/org.wso2.carbon.caching.core-4.2.0.jar
+[2016-07-26 09:33:02,459]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: wso2caching-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.caching.core/4.2.0/org.wso2.carbon.caching.core-4.2.0.jar
+[2016-07-26 09:33:02,461]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: ComponentMgtModule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.feature.mgt.services/4.2.0/org.wso2.carbon.feature.mgt.services-4.2.0.jar
+[2016-07-26 09:33:02,461]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: ComponentMgtModule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.feature.mgt.services/4.2.0/org.wso2.carbon.feature.mgt.services-4.2.0.jar
+[2016-07-26 09:33:02,468]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rampart - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-core/1.6.1.wso2v9/rampart-core-1.6.1.wso2v9.jar
+[2016-07-26 09:33:02,468]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rampart - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-core/1.6.1.wso2v9/rampart-core-1.6.1.wso2v9.jar
+[2016-07-26 09:33:02,474]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rahas - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-trust/1.6.1.wso2v9/rampart-trust-1.6.1.wso2v9.jar
+[2016-07-26 09:33:02,474]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rahas - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-trust/1.6.1.wso2v9/rampart-trust-1.6.1.wso2v9.jar
+[2016-07-26 09:33:02,481]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: uddiversionmodule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.uddi/4.2.0/org.wso2.carbon.registry.uddi-4.2.0.jar
+[2016-07-26 09:33:02,481]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: uddiversionmodule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.uddi/4.2.0/org.wso2.carbon.registry.uddi-4.2.0.jar
+[2016-07-26 09:33:02,482]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: pagination-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.server/4.2.0/org.wso2.carbon.registry.server-4.2.0.jar
+[2016-07-26 09:33:02,482]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: pagination-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.server/4.2.0/org.wso2.carbon.registry.server-4.2.0.jar
+[2016-07-26 09:33:02,510]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: wso2caching-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.caching.core/4.2.0/org.wso2.carbon.caching.core-4.2.0.jar
+[2016-07-26 09:33:02,510]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: wso2caching-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.caching.core/4.2.0/org.wso2.carbon.caching.core-4.2.0.jar
+[2016-07-26 09:33:02,512]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: ComponentMgtModule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.feature.mgt.services/4.2.0/org.wso2.carbon.feature.mgt.services-4.2.0.jar
+[2016-07-26 09:33:02,512]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: ComponentMgtModule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.feature.mgt.services/4.2.0/org.wso2.carbon.feature.mgt.services-4.2.0.jar
+[2016-07-26 09:33:02,519]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rampart - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-core/1.6.1.wso2v9/rampart-core-1.6.1.wso2v9.jar
+[2016-07-26 09:33:02,519]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rampart - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-core/1.6.1.wso2v9/rampart-core-1.6.1.wso2v9.jar
+[2016-07-26 09:33:02,524]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rahas - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-trust/1.6.1.wso2v9/rampart-trust-1.6.1.wso2v9.jar
+[2016-07-26 09:33:02,524]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: rahas - file:/home/nifras/.m2/repository/org/apache/rampart/wso2/rampart-trust/1.6.1.wso2v9/rampart-trust-1.6.1.wso2v9.jar
+[2016-07-26 09:33:02,531]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: uddiversionmodule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.uddi/4.2.0/org.wso2.carbon.registry.uddi-4.2.0.jar
+[2016-07-26 09:33:02,531]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: uddiversionmodule-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.uddi/4.2.0/org.wso2.carbon.registry.uddi-4.2.0.jar
+[2016-07-26 09:33:02,533]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: pagination-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.server/4.2.0/org.wso2.carbon.registry.server-4.2.0.jar
+[2016-07-26 09:33:02,533]  INFO {org.apache.axis2.deployment.ModuleDeployer} -  Deploying module: pagination-4.2.0 - file:/home/nifras/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.server/4.2.0/org.wso2.carbon.registry.server-4.2.0.jar
+[2016-07-26 09:33:02,588]  INFO {org.wso2.carbon.connector.StubHubIntegrationTest} -  Sleeping for 30 seconds for connector to upload.
+</system-out>
+  </testcase>
+  <testcase time="0.001" classname="org.wso2.carbon.connector.StubHubIntegrationTest" name="testgetEventDetails">
+    <skipped/>
+    <system-out>[2016-07-26 09:33:32,662]  INFO {org.wso2.carbon.automation.core.PlatformTestManager} -  Running the test method --- org.wso2.carbon.connector.StubHubIntegrationTest.testgetEventDetails ----
+</system-out>
+  </testcase>
 </testsuite>

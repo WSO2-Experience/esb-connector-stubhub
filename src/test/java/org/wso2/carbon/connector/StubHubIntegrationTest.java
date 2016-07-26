@@ -15,9 +15,10 @@
 * specific language governing permissions and limitations
 * under the License.
 */
-package org.wso2.carbon.esb.connector;
+package org.wso2.carbon.connector;
 
 import org.json.JSONObject;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.wso2.connector.integration.test.base.ConnectorIntegrationTestBase;
@@ -32,6 +33,7 @@ import java.util.Map;
 public class StubHubIntegrationTest extends ConnectorIntegrationTestBase {
 
     private Map<String, String> esbRequestHeadersMap = new HashMap<String, String>();
+
     private Map<String, String> apiRequestHeadersMap = new HashMap<String, String>();
 
     @BeforeClass(alwaysRun = true)
@@ -39,12 +41,21 @@ public class StubHubIntegrationTest extends ConnectorIntegrationTestBase {
         init("StubHub-connector-1.0.0");
         esbRequestHeadersMap.put("Accept-Charset", "UTF-8");
         esbRequestHeadersMap.put("Content-Type", "application/json");
+        esbRequestHeadersMap.put("Accept", "application/json");
+        apiRequestHeadersMap.put("Accept", "application/json");
     }
 
-    @Test(enabled = true, groups = {"wso2.esb"}, description = "StubHub test case")
-    public void testSample() throws Exception {
-        log.info("Successfully tested");
+    @Test(groups = {"wso2.esb"}, description = "StubHub test case")
+    public void testgetEventDetails() throws Exception {
+        apiRequestHeadersMap.put("Authorization","Bearer "+connectorProperties.getProperty("appToken"));
+        String apiEndPoint =
+                connectorProperties.getProperty("apiUrl") + "/catalog/events/v2/" + connectorProperties.getProperty("eventId");
+
         RestResponse<JSONObject> esbRestResponse =
-                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "sampleRequest.json");
+                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "getEventDetails.json");
+
+        RestResponse< JSONObject > apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
+
+      //  Assert.assertEquals(esbRestResponse.getBody().get("id"), apiRestResponse.getBody().get("id"));
     }
 }
