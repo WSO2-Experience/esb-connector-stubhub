@@ -53,7 +53,6 @@
             </args>
         </payloadFactory>
         <property name="messageType" value="application/json" scope="axis2"/>
-        <property name="Accept-Encoding" action="remove" scope="transport"/>
         <call>
             <endpoint>
                 <http method="post"
