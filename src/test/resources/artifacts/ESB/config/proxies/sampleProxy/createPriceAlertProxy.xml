@@ -30,6 +30,10 @@
             <property name="userId" expression="json-eval($.userId)"/>
             <property name="versionNumber" expression="json-eval($.versionNumber)"/>
             <property name="eventId" expression="json-eval($.eventId)"/>
+            <property name="amount" expression="json-eval($.amount)"/>
+            <property name="currency" expression="json-eval($.currency)"/>
+            <property name="quantity" expression="json-eval($.quantity)"/>
+            <property name="zones" expression="json-eval($.zones)"/>
             <StubHub.init>
                 <apiUrl>{$ctx:apiUrl}</apiUrl>
                 <accessToken>{$ctx:accessToken}</accessToken>
@@ -38,6 +42,10 @@
                 <userId>{$ctx:userId}</userId>
                 <versionNumber>{$ctx:versionNumber}</versionNumber>
                 <eventId>{$ctx:eventId}</eventId>
+                <amount>{$ctx:amount}</amount>
+                <currency>{$ctx:currency}</currency>
+                <quantity>{$ctx:quantity}</quantity>
+                <zones>{$ctx:zones}</zones>
             </StubHub.createPriceAlert>
             <respond/>
         </inSequence>
@@ -48,3 +56,14 @@
     </target>
     <description/>
 </proxy>
+
+
+        {
+        "apiUrl":"https://api.stubhub.com",
+        "accessToken":"89ef576fa84b3dae54af11114df5c3b8",
+        "userId":"36FF89BC3CAC15C9E0540010E0463606",
+        "versionNumber":"v1",
+        "eventId":"9513477",
+        "amount" : "10.00",
+        "quantity" : "3"
+        }

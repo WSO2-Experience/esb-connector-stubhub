@@ -21,6 +21,14 @@
 		<component name="createPriceAlert" >
 	    		<file>createPriceAlert.xml</file>
 	    		<description>Method for Getting Details about methods</description>
-		</component>			
+		</component>
+		<component name="getMyPriceAlertRequest" >
+	    		<file>getMyPriceAlertRequest.xml</file>
+	    		<description>Method for Getting Details about methods</description>
+		</component>
+		<component name="getMyPriceAlertRequests" >
+	    		<file>getMyPriceAlertRequests.xml</file>
+	    		<description>Method for Getting Details about methods</description>
+		</component>
     </subComponents>    
 </component>

@@ -27,18 +27,19 @@
         <inSequence>
             <property name="apiUrl" expression="json-eval($.apiUrl)"/>
             <property name="accessToken" expression="json-eval($.accessToken)"/>
-            <property name="listingId" expression="json-eval($.listingId)"/>
+            <property name="userId" expression="json-eval($.userId)"/>
             <property name="versionNumber" expression="json-eval($.versionNumber)"/>
-            <property name="includeFees" expression="json-eval($.includeFees)"/>
+            <property name="priceAlertRequestId" expression="json-eval($.priceAlertRequestId)"/>
+
             <StubHub.init>
                 <apiUrl>{$ctx:apiUrl}</apiUrl>
                 <accessToken>{$ctx:accessToken}</accessToken>
             </StubHub.init>
-            <StubHub.getListing>
-                <listingId>{$ctx:listingId}</listingId>
+            <StubHub.getMyPriceAlertRequest>
+                <userId>{$ctx:userId}</userId>
                 <versionNumber>{$ctx:versionNumber}</versionNumber>
-                <includeFees>{$ctx:includeFees}</includeFees>
-            </StubHub.getListing>
+                <priceAlertRequestId>{$ctx:priceAlertRequestId}</priceAlertRequestId>
+            </StubHub.getMyPriceAlertRequest>
             <respond/>
         </inSequence>
         <outSequence>
@@ -48,3 +49,12 @@
     </target>
     <description/>
 </proxy>
+
+
+        {
+        "apiUrl":"https://api.stubhub.com",
+        "accessToken":"89ef576fa84b3dae54af11114df5c3b8",
+        "userId":"36FF89BC3CAC15C9E0540010E0463606",
+        "versionNumber":"v1",
+        "priceAlertRequestId":"6529385"
+        }

@@ -1,9 +1,0 @@
--------------------------------------------------------------------------------
-Test set: TestSuite
--------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 1, Time elapsed: 32.512 sec <<< FAILURE!
-setEnvironment(org.wso2.carbon.connector.StubHubIntegrationTest)  Time elapsed: 32.407 sec  <<< FAILURE!
-java.lang.NullPointerException
-	at org.wso2.connector.integration.test.base.ConnectorIntegrationTestBase.init(ConnectorIntegrationTestBase.java:194)
-	at org.wso2.carbon.connector.StubHubIntegrationTest.setEnvironment(StubHubIntegrationTest.java:41)
-

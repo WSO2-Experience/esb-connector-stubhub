@@ -1,7 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f955aa00-ad10-410e-a715-c399fb621f4e" name="Default" comment="" />
+    <list default="true" id="f955aa00-ad10-410e-a715-c399fb621f4e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/usercustomer/getMyPriceAlertRequest.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/usercustomer/getMyPriceAlertRequests.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/usercustomer/pauseOrResumePriceAlert.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/artifacts/ESB/config/proxies/sampleProxy/getMyPriceAlertRequestProxy.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/artifacts/ESB/config/proxies/sampleProxy/getMyPriceAlertRequestsProxy.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/reports/ESBTestSuite/testng-results.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/reports/testng-results.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/ESBTestSuite/Sample-Connector-Test.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/ESBTestSuite/Sample-Connector-Test.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/ESBTestSuite/Sample-Connector-Test.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/ESBTestSuite/classes.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/ESBTestSuite/groups.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/ESBTestSuite/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/ESBTestSuite/main.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/ESBTestSuite/methods-alphabetical.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/ESBTestSuite/methods-not-run.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/ESBTestSuite/methods.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/ESBTestSuite/reporter-output.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/ESBTestSuite/testng-failed.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/ESBTestSuite/testng.xml.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/ESBTestSuite/toc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-org.wso2.carbon.connector.StubHubIntegrationTest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/testng.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/artifacts/AXIS2/aar/Axis2Service.aar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/artifacts/AXIS2/aar/LBService1.aar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/artifacts/AXIS2/aar/SecureStockQuoteService.aar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/artifacts/AXIS2/aar/SimpleStockQuoteService.aar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/artifacts/AXIS2/config/test_axis2_server_9000.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/artifacts/ESB/config/proxies/sampleProxy/createPriceAlertProxy.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/artifacts/ESB/config/proxies/sampleProxy/getEventDetailsProxy.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/artifacts/ESB/config/proxies/sampleProxy/sampleProxy.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/artifacts/ESB/config/restRequests/sampleRequest/getEventDetails.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/artifacts/ESB/config/restRequests/sampleRequest/sampleRequest.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/artifacts/ESB/connector/config/StubHub.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/automation.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/filters.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/instrumentation.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/keystores/products/client-truststore.jks" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/keystores/products/store.jks" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/keystores/products/wso2carbon.jks" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/keystores/stratos/client-truststore.jks" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/keystores/stratos/wso2carbon.jks" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/org/wso2/carbon/connector/StubHubIntegrationTest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/tenantList.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/testng.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/StubHub-connector-1.0.0.zip" afterPath="$PROJECT_DIR$/target/StubHub-connector-1.0.0.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/org.wso2.carbon.esb.connector.stubhub-1.0.0.jar" afterPath="$PROJECT_DIR$/target/org.wso2.carbon.esb.connector.stubhub-1.0.0.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/usercustomer/component.xml" afterPath="$PROJECT_DIR$/src/main/resources/usercustomer/component.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/usercustomer/createPriceAlert.xml" afterPath="$PROJECT_DIR$/src/main/resources/usercustomer/createPriceAlert.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/artifacts/ESB/config/proxies/sampleProxy/createPriceAlertProxy.xml" afterPath="$PROJECT_DIR$/src/test/resources/artifacts/ESB/config/proxies/sampleProxy/createPriceAlertProxy.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/usercustomer/component.xml" afterPath="$PROJECT_DIR$/target/classes/usercustomer/component.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/usercustomer/createPriceAlert.xml" afterPath="$PROJECT_DIR$/target/classes/usercustomer/createPriceAlert.xml" />
+    </list>
     <ignored path="org.wso2.carbon.esb.connector.stubhub.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,44 +82,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StubHubIntegrationTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/org/wso2/carbon/connector/StubHubIntegrationTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="36" column="85" selection-start-line="36" selection-start-column="85" selection-end-line="36" selection-end-column="85" />
-              <folding>
-                <element signature="e#0#2471#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="connector.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/connector.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="26" column="43" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="component.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/usercustomer/component.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createPriceAlert.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/usercustomer/createPriceAlert.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="54" column="77" selection-start-line="54" selection-start-column="77" selection-end-line="54" selection-end-column="77" />
+            <state relative-caret-position="561">
+              <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -67,8 +95,28 @@
       <file leaf-file-name="getMyListing.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/accountmanagement/getMyListing.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="512">
+              <caret line="65" column="52" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pauseOrResumePriceAlert.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/usercustomer/pauseOrResumePriceAlert.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="56" column="51" selection-start-line="56" selection-start-column="51" selection-end-line="56" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getMyPriceAlertRequest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/usercustomer/getMyPriceAlertRequest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="21" column="40" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -77,28 +125,28 @@
       <file leaf-file-name="getListing.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/accountmanagement/getListing.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="558">
+              <caret line="40" column="17" selection-start-line="29" selection-start-column="8" selection-end-line="40" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createPriceAlertProxy.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/artifacts/ESB/config/proxies/sampleProxy/createPriceAlertProxy.xml">
+      <file leaf-file-name="getMyPriceAlertRequestProxy.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/artifacts/ESB/config/proxies/sampleProxy/getMyPriceAlertRequestProxy.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+            <state relative-caret-position="563">
+              <caret line="59" column="9" selection-start-line="53" selection-start-column="8" selection-end-line="59" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="init.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/config/init.xml">
+      <file leaf-file-name="getMyPriceAlertRequests.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/usercustomer/getMyPriceAlertRequests.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="46" column="73" selection-start-line="46" selection-start-column="73" selection-end-line="46" selection-end-column="73" />
+            <state relative-caret-position="660">
+              <caret line="44" column="153" selection-start-line="44" selection-start-column="153" selection-end-line="44" selection-end-column="153" />
               <folding />
             </state>
           </provider>
@@ -114,17 +162,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getEventDetailsProxy.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/artifacts/ESB/config/proxies/sampleProxy/getEventDetailsProxy.xml">
+      <file leaf-file-name="getMyPriceAlertRequestsProxy.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/artifacts/ESB/config/proxies/sampleProxy/getMyPriceAlertRequestsProxy.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="30" column="31" selection-start-line="0" selection-start-column="0" selection-end-line="47" selection-end-column="8" />
+            <state relative-caret-position="724">
+              <caret line="53" column="7" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="component.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/event/component.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -143,10 +204,15 @@
         <option value="$PROJECT_DIR$/src/test/java/org/wso2/carbon/connector/StubHubIntegrationTest.java" />
         <option value="$PROJECT_DIR$/src/test/resources/testng.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/connector.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/usercustomer/component.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/config/init.xml" />
-        <option value="$PROJECT_DIR$/src/test/resources/artifacts/ESB/config/proxies/sampleProxy/createPriceAlertProxy.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/usercustomer/createPriceAlert.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/usercustomer/pauseOrResumePriceAlert.xml" />
+        <option value="$PROJECT_DIR$/src/test/resources/artifacts/ESB/config/proxies/sampleProxy/createPriceAlertProxy.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/usercustomer/getMyPriceAlertRequest.xml" />
+        <option value="$PROJECT_DIR$/src/test/resources/artifacts/ESB/config/proxies/sampleProxy/getMyPriceAlertRequestProxy.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/usercustomer/component.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/usercustomer/getMyPriceAlertRequests.xml" />
+        <option value="$PROJECT_DIR$/src/test/resources/artifacts/ESB/config/proxies/sampleProxy/getMyPriceAlertRequestsProxy.xml" />
       </list>
     </option>
   </component>
@@ -410,6 +476,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org.wso2.carbon.esb.connector.stubhub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org.wso2.carbon.esb.connector.stubhub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="venue" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -967,7 +1059,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912722" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34805468" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19218585" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24986088" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1032,49 +1124,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/wso2/carbon/connector/StubHubIntegrationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="36" column="85" selection-start-line="36" selection-start-column="85" selection-end-line="36" selection-end-column="85" />
-          <folding>
-            <element signature="e#0#2471#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/connector.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="26" column="43" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/usercustomer/component.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/usercustomer/createPriceAlert.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/accountmanagement/getMyListing.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/accountmanagement/getListing.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1352,15 +1401,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/accountmanagement/getMyListing.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/connector.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="468">
+          <caret line="26" column="43" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/accountmanagement/getListing.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config/init.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="46" column="73" selection-start-line="46" selection-start-column="73" selection-end-line="46" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/usercustomer/createPriceAlert.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="64" column="70" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/artifacts/ESB/config/proxies/sampleProxy/createPriceAlertProxy.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="724">
+          <caret line="57" column="8" selection-start-line="19" selection-start-column="0" selection-end-line="57" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/usercustomer/pauseOrResumePriceAlert.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="56" column="51" selection-start-line="56" selection-start-column="51" selection-end-line="56" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/usercustomer/getMyPriceAlertRequest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="21" column="40" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/artifacts/ESB/config/proxies/sampleProxy/getMyPriceAlertRequestProxy.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="59" column="9" selection-start-line="53" selection-start-column="8" selection-end-line="59" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/usercustomer/component.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/event/component.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1376,42 +1481,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/connector.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/accountmanagement/getListing.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="26" column="43" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="43" />
+        <state relative-caret-position="558">
+          <caret line="40" column="17" selection-start-line="29" selection-start-column="8" selection-end-line="40" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/usercustomer/component.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/accountmanagement/getMyListing.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+        <state relative-caret-position="512">
+          <caret line="65" column="52" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config/init.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/usercustomer/getMyPriceAlertRequests.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="46" column="73" selection-start-line="46" selection-start-column="73" selection-end-line="46" selection-end-column="73" />
+        <state relative-caret-position="660">
+          <caret line="44" column="153" selection-start-line="44" selection-start-column="153" selection-end-line="44" selection-end-column="153" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/artifacts/ESB/config/proxies/sampleProxy/createPriceAlertProxy.xml">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/artifacts/ESB/config/proxies/sampleProxy/getMyPriceAlertRequestsProxy.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/usercustomer/createPriceAlert.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="54" column="77" selection-start-line="54" selection-start-column="77" selection-end-line="54" selection-end-column="77" />
+        <state relative-caret-position="724">
+          <caret line="53" column="7" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="7" />
           <folding />
         </state>
       </provider>

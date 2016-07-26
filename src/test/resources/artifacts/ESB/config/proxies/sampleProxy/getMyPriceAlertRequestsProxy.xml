@@ -26,17 +26,20 @@
     <target>
         <inSequence>
             <property name="apiUrl" expression="json-eval($.apiUrl)"/>
-            <property name="appToken" expression="json-eval($.appToken)"/>
-            <property name="eventId" expression="json-eval($.eventId)"/>
+            <property name="accessToken" expression="json-eval($.accessToken)"/>
+            <property name="userId" expression="json-eval($.userId)"/>
             <property name="versionNumber" expression="json-eval($.versionNumber)"/>
+            <property name="eventId" expression="json-eval($.eventId)"/>
+
             <StubHub.init>
                 <apiUrl>{$ctx:apiUrl}</apiUrl>
-                <appToken>{$ctx:appToken}</appToken>
+                <accessToken>{$ctx:accessToken}</accessToken>
             </StubHub.init>
-            <StubHub.getEventDetails>
-                <eventId>{$ctx:eventId}</eventId>
+            <StubHub.getMyPriceAlertRequests>
+                <userId>{$ctx:userId}</userId>
                 <versionNumber>{$ctx:versionNumber}</versionNumber>
-            </StubHub.getEventDetails>
+                <eventId>{$ctx:eventId}</eventId>
+            </StubHub.getMyPriceAlertRequests>
             <respond/>
         </inSequence>
         <outSequence>
@@ -46,3 +49,13 @@
     </target>
     <description/>
 </proxy>
+
+
+
+        {
+        "apiUrl":"https://api.stubhub.com",
+        "accessToken":"89ef576fa84b3dae54af11114df5c3b8",
+        "userId":"36FF89BC3CAC15C9E0540010E0463606",
+        "versionNumber":"v1",
+        "eventId" : "9513477"
+        }
