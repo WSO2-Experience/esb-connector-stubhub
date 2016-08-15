@@ -1,0 +1,10 @@
+{
+  "priceAlert": {
+    "eventId": "%s(eventId)",
+    "maxTicketPrice": {
+      "amount": "%s(amount)",
+      "currency": "USD"
+    },
+    "quantity": "%s(quantity)"
+  }
+}

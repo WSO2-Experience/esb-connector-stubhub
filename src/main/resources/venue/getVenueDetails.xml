@@ -17,21 +17,24 @@
 -->
 <template xmlns="http://ws.apache.org/ns/synapse" name="getVenueDetails">
     <!--Uri Template parameter-->
+
+    <parameter name="appToken" description=""/>
     <parameter name="venueId" description=""/>
-    <parameter name="versionNumber" description=""/>
 
     <!-- Query parameters -->
     <parameter name="locale" description=""/>
 
     <sequence>
+        <property name="uri.var.appToken" expression="$func:appToken"/>
         <property name="uri.var.venueId" expression="$func:venueId"/>
-        <property name="uri.var.versionNumber" expression="$func:versionNumber"/>
         <property name="uri.var.locale" expression="$func:locale"/>
-
+        <header name="Authorization"
+                expression="fn:concat('Bearer ', $ctx:uri.var.appToken )"
+                scope="transport"/>
         <call>
             <endpoint>
                 <http method="get"
-                      uri-template="{uri.var.apiUrl}/catalog/venues/{+uri.var.versionNumber}/{+uri.var.venueId}"/>
+                      uri-template="{uri.var.apiUrl}/catalog/venues/v2/{+uri.var.venueId}"/>
             </endpoint>
         </call>
     </sequence>

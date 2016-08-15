@@ -15,7 +15,7 @@
    specific language governing permissions and limitations
    under the License.
 -->
-<template xmlns="http://ws.apache.org/ns/synapse" name="getMyPriceAlertRequest">
+<template xmlns="http://ws.apache.org/ns/synapse" name="deleteMyPriceAlertRequest">
     <!--Uri Template parameter-->
     <parameter name="accessToken" description=""/>
     <parameter name="userId" description=""/>
@@ -32,9 +32,10 @@
                 scope="transport"/>
         <call>
             <endpoint>
-                <http method="get"
+                <http method="delete"
                       uri-template="{uri.var.apiUrl}/user/customers/v1/{+uri.var.userId}/pricealerts/{uri.var.priceAlertRequestId}"/>
             </endpoint>
         </call>
     </sequence>
 </template>
+

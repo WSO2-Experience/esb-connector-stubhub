@@ -17,8 +17,9 @@
 -->
 <template xmlns="http://ws.apache.org/ns/synapse" name="searchInventory">
     <!--Uri Template parameter-->
+
+    <parameter name="appToken" description=""/>
     <parameter name="eventId" description=""/>
-    <parameter name="versionNumber" description="" />
     <parameter name="zoneIdList" description="" />
     <parameter name="sectionIdList" description="" />
     <parameter name="quantity" description="" />
@@ -37,8 +38,8 @@
 
 
     <sequence>
+        <property name="uri.var.appToken" expression="$func:appToken"/>
         <property name="uri.var.eventId" expression="$func:eventId"/>
-        <property name="uri.var.versionNumber" expression="$func:versionNumber"/>
         <property name="uri.var.zoneIdList" expression="$func:zoneIdList"/>
         <property name="uri.var.sectionIdList" expression="$func:sectionIdList"/>
         <property name="uri.var.quantity" expression="$func:quantity"/>
@@ -91,38 +92,43 @@
             if (listingAttributeList != null && listingAttributeList != "") {
                 params += "&listingattributelist=" + listingAttributeList;
             }
-            if (listingAttributeList != null && listingAttributeList != "") {
+            if (listingAttributeCategoryList != null && listingAttributeCategoryList != "") {
                 params += "&listingattributecategorylist=" + listingAttributeCategoryList;
             }
-            if (listingAttributeList != null && listingAttributeList != "") {
+            if (deliveryTypeList != null && deliveryTypeList != "") {
                 params += "&deliverytypelist=" + deliveryTypeList;
             }
-            if (listingAttributeList != null && listingAttributeList != "") {
+            if (sort != null && sort != "") {
                 params += "&sort=" + sort;
             }
-            if (listingAttributeList != null && listingAttributeList != "") {
+            if (start != null && start != "") {
                 params += "&start=" + start;
             }
-            if (listingAttributeList != null && listingAttributeList != "") {
+            if (rows != null && rows != "") {
                 params += "&rows=" + rows;
             }
-            if (listingAttributeList != null && listingAttributeList != "") {
+            if (zoneStats != null && zoneStats != "") {
                 params += "&zonestats=" + zoneStats;
             }
-            if (listingAttributeList != null && listingAttributeList != "") {
+            if (sectionStats != null && sectionStats != "") {
                 params += "&sectionstats=" + sectionStats;
             }
-            if (listingAttributeList != null && listingAttributeList != "") {
+            if (pricingSummary != null && pricingSummary != "") {
                 params += "&pricingsummary=" + pricingSummary;
             }
 
             mc.setProperty('uri.var.params', params);
            ]]>
         </script>
+        <property name="messageType" value="application/json" scope="axis2"/>
+        <property name="DISABLE_CHUNKING" value="true" scope="axis2"/>
+        <header name="Authorization"
+                expression="fn:concat('Bearer ', $ctx:uri.var.appToken )"
+                scope="transport"/>
         <call>
             <endpoint>
                 <http method="get"
-                      uri-template="legacy-encoding:{uri.var.apiUrl}/search/inventory/{uri.var.versionNumber}?eventid={uri.var.eventId}{uri.var.params}"/>
+                      uri-template="legacy-encoding:{uri.var.apiUrl}/search/inventory/v1?eventid={uri.var.eventId}{uri.var.params}"/>
             </endpoint>
         </call>
     </sequence>

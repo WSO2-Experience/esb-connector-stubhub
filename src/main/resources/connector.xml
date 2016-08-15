@@ -25,6 +25,7 @@
         <dependency component="accountmanagement" />
         <dependency component="accountmanagementsales" />
         <dependency component="usercustomer" />
+        <dependency component="tokens" />
         <description>StubHub Connector Library</description>
     </component>
     <icon>icon/icon.png</icon>

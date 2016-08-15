@@ -1,0 +1,6 @@
+{
+  "accessToken":"%s(accessToken)",
+  "apiUrl":"%s(apiUrl)",
+  "listingId":"%s(listingId)",
+  "includeFees":"%s(includeFees)"
+}

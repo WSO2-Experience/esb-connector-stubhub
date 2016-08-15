@@ -16,17 +16,11 @@
    specific language governing permissions and limitations
    under the License.
 -->
-<component name="accountmanagement" type="synapse/template" >
+<component name="tokens" type="synapse/template" >
     <subComponents> 
-		<component name="getMyListing" >
-	    		<file>getMyListing.xml</file>
+		<component name="getAccessToken" >
+	    		<file>getAccessToken.xml</file>
 	    		<description>Method for Getting Details about methods</description>
-		</component>
-		<component name="getMyListings" >
-	    		<file>getMyListings.xml</file>
-	    		<description>Method for Getting Details about methods</description>
-		</component>
+		</component>			
     </subComponents>    
 </component>
-
-<!-- Listing Id 1207044207 -->

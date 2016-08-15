@@ -30,5 +30,18 @@
 	    		<file>getMyPriceAlertRequests.xml</file>
 	    		<description>Method for Getting Details about methods</description>
 		</component>
-    </subComponents>    
+		<component name="updateMyPriceAlertRequest" >
+	    		<file>updateMyPriceAlertRequest.xml</file>
+	    		<description>Method for Getting Details about methods</description>
+		</component>
+		<component name="deleteMyPriceAlertRequest" >
+	    		<file>deleteMyPriceAlertRequest.xml</file>
+	    		<description>Method for Getting Details about methods</description>
+		</component>
+		<component name="pauseMyPriceAlertRequest" >
+	    		<file>pauseMyPriceAlertRequest.xml</file>
+	    		<description>Method for Getting Details about methods</description>
+		</component>
+
+    </subComponents>
 </component>

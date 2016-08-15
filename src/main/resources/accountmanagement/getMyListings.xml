@@ -15,27 +15,47 @@
    specific language governing permissions and limitations
    under the License.
 -->
-<template xmlns="http://ws.apache.org/ns/synapse" name="getMyListing">
+<template xmlns="http://ws.apache.org/ns/synapse" name="getMyListings">
     <!--Uri Template parameter-->
     <parameter name="accessToken" description=""/>
-    <parameter name="listingId" description=""/>
+    <parameter name="userId" description=""/>
 
     <!-- Query parameters -->
-    <parameter name="includeFees" description=""/>
+    <parameter name="filters" description=""/>
+    <parameter name="sort" description=""/>
+    <parameter name="start" description=""/>
+    <parameter name="rows" description=""/>
+
 
     <sequence>
         <property name="uri.var.accessToken" expression="$func:accessToken"/>
-        <property name="uri.var.listingId" expression="$func:listingId"/>
-        <property name="uri.var.includeFees" expression="$func:includeFees"/>
+        <property name="uri.var.userId" expression="$func:userId"/>
+        <property name="uri.var.filters" expression="$func:filters"/>
+        <property name="uri.var.sort" expression="$func:sort"/>
+        <property name="uri.var.start" expression="$func:start"/>
+        <property name="uri.var.rows" expression="$func:rows"/>
         <property name="uri.var.params" value=""/>
 
         <script language="js">
             <![CDATA[
             var params = mc.getProperty('uri.var.params');
-            var includeFees = mc.getProperty('uri.var.includeFees');
-            if (includeFees != null && includeFees != "") {
-                params += "?includeFees=" + includeFees;
+            var filters = mc.getProperty('uri.var.filters');
+            var sort = mc.getProperty('uri.var.sort');
+            var start = mc.getProperty('uri.var.start');
+            var rows = mc.getProperty('uri.var.rows');
+            if (filters != null && filters != "") {
+                params += "filters=" + filters + "&";
             }
+            if (sort != null && sort != "") {
+                params += "sort=" + sort + "&";
+            }
+            if (start != null && start != "") {
+                params += "start=" + start + "&";
+            }
+            if (rows != null && rows != "") {
+                params += "rows=" + rows + "&";
+            }
+
              mc.setProperty('uri.var.params', params);
            ]]>
         </script>
@@ -47,10 +67,8 @@
         <call>
             <endpoint>
                 <http method="get"
-                      uri-template="legacy-encoding:{uri.var.apiUrl}/accountmanagement/listings/v1/{+uri.var.listingId}{uri.var.params}"/>
+                      uri-template="legacy-encoding:{uri.var.apiUrl}/accountmanagement/listings/v1/seller/{+uri.var.userId}?{uri.var.params}"/>
             </endpoint>
         </call>
-
-
     </sequence>
 </template>

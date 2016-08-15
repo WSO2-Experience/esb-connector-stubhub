@@ -15,24 +15,28 @@
    specific language governing permissions and limitations
    under the License.
 -->
-<template xmlns="http://ws.apache.org/ns/synapse" name="createPriceAlert">
+<template xmlns="http://ws.apache.org/ns/synapse" name="updateMyPriceAlertRequest">
     <!--Uri Template parameter-->
     <parameter name="accessToken" description=""/>
     <parameter name="userId" description=""/>
+    <parameter name="priceAlertRequestId" description="" />
     <parameter name="eventId" description="" />
     <parameter name="amount" description="" />
     <parameter name="currency" description="" />
     <parameter name="quantity" description="" />
+    <parameter name="pauseInd" description="" />
 
     <!-- Query parameters -->
 
     <sequence>
         <property name="uri.var.accessToken" expression="$func:accessToken"/>
         <property name="uri.var.userId" expression="$func:userId"/>
+        <property name="uri.var.priceAlertRequestId" expression="$func:priceAlertRequestId"/>
         <property name="uri.var.eventId" expression="$func:eventId"/>
         <property name="uri.var.amount" expression="$func:amount"/>
         <property name="uri.var.currency" expression="$func:currency"/>
         <property name="uri.var.quantity" expression="$func:quantity"/>
+        <property name="uri.var.pauseInd" expression="$func:pauseInd"/>
         <payloadFactory media-type="json">
             <format>
                 {
@@ -42,7 +46,8 @@
                 "amount": "$2",
                 "currency": "$3"
                 },
-                "quantity": "$4"
+                "quantity": "$4",
+                "pauseInd": "$5"
                 }
                 }
             </format>
@@ -51,6 +56,7 @@
                 <arg expression="$ctx:uri.var.amount"/>
                 <arg expression="$ctx:uri.var.currency"/>
                 <arg expression="$ctx:uri.var.quantity"/>
+                <arg expression="$ctx:uri.var.pauseInd"/>
             </args>
         </payloadFactory>
         <property name="messageType" value="application/json" scope="axis2"/>
@@ -60,10 +66,10 @@
                 scope="transport"/>
         <call>
             <endpoint>
-                <http method="post"
-                      uri-template="{uri.var.apiUrl}/user/customers/v1/{+uri.var.userId}/pricealerts"/>
+                <http method="put"
+                      uri-template="{uri.var.apiUrl}/user/customers/v1/{+uri.var.userId}/pricealerts/{uri.var.priceAlertRequestId}"/>
             </endpoint>
         </call>
-
     </sequence>
 </template>
+

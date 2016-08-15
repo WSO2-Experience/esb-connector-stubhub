@@ -16,22 +16,21 @@
    under the License.
 -->
 <template xmlns="http://ws.apache.org/ns/synapse" name="getEventDetails">
-    <!--Uri Template parameter-->
+    <parameter name="appToken" description=""/>
     <parameter name="eventId" description=""/>
-    <parameter name="versionNumber" description="" />
-
-    <!-- Query parameters -->
-    <parameter name="locale" description=""/>
-
     <sequence>
+        <property name="uri.var.appToken" expression="$func:appToken"/>
         <property name="uri.var.eventId" expression="$func:eventId"/>
-        <property name="uri.var.versionNumber" expression="$func:versionNumber"/>
-        <property name="uri.var.locale" expression="$func:locale"/>
+        <property name="messageType" value="application/json" scope="axis2"/>
 
+        <header name="Authorization"
+                expression="fn:concat('Bearer ', $ctx:uri.var.appToken )"
+                scope="transport"/>
+        <log level="full"/>
         <call>
             <endpoint>
                 <http method="get"
-                      uri-template="{uri.var.apiUrl}/catalog/events/{+uri.var.versionNumber}/{+uri.var.eventId}"/>
+                      uri-template="{uri.var.apiUrl}/catalog/events/v2/{uri.var.eventId}"/>
             </endpoint>
         </call>
     </sequence>

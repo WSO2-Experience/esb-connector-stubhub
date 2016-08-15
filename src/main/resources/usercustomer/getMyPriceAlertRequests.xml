@@ -17,15 +17,15 @@
 -->
 <template xmlns="http://ws.apache.org/ns/synapse" name="getMyPriceAlertRequests">
     <!--Uri Template parameter-->
+    <parameter name="accessToken" description=""/>
     <parameter name="userId" description=""/>
-    <parameter name="versionNumber" description="" />
 
     <!-- Query parameters -->
     <parameter name="eventId" description="" />
 
     <sequence>
+        <property name="uri.var.accessToken" expression="$func:accessToken"/>
         <property name="uri.var.userId" expression="$func:userId"/>
-        <property name="uri.var.versionNumber" expression="$func:versionNumber"/>
         <property name="uri.var.eventId" expression="$func:eventId"/>
         <property name="uri.var.params" value=""/>
 
@@ -39,10 +39,15 @@
              mc.setProperty('uri.var.params', params);
            ]]>
         </script>
+        <property name="messageType" value="application/json" scope="axis2"/>
+        <property name="DISABLE_CHUNKING" value="true" scope="axis2"/>
+        <header name="Authorization"
+                expression="fn:concat('Bearer ', $ctx:uri.var.accessToken )"
+                scope="transport"/>
         <call>
             <endpoint>
                 <http method="get"
-                      uri-template="legacy-encoding:{uri.var.apiUrl}/user/customers/{+uri.var.versionNumber}/{+uri.var.userId}/pricealerts{uri.var.params}"/>
+                      uri-template="{uri.var.apiUrl}/user/customers/v1/{+uri.var.userId}/pricealerts{uri.var.params}"/>
             </endpoint>
         </call>
     </sequence>

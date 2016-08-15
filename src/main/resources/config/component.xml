@@ -22,5 +22,6 @@
 	    		<file>init.xml</file>
 	    		<description>Init operation</description>
 		</component>
+
     </subComponents>    
 </component>
