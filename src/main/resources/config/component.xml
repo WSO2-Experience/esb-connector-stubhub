@@ -22,6 +22,9 @@
 	    		<file>init.xml</file>
 	    		<description>Init operation</description>
 		</component>
-
+		<component name="getAccessToken" >
+			<file>getAccessToken.xml</file>
+			<description>Method for getting access token</description>
+		</component>
     </subComponents>    
 </component>

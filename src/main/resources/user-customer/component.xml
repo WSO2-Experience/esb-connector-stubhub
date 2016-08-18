@@ -16,31 +16,31 @@
    specific language governing permissions and limitations
    under the License.
 -->
-<component name="usercustomer" type="synapse/template" >
+<component name="user-customer" type="synapse/template" >
     <subComponents> 
 		<component name="createPriceAlert" >
 	    		<file>createPriceAlert.xml</file>
-	    		<description>Method for Getting Details about methods</description>
+	    		<description>Method for creating price alerts</description>
 		</component>
-		<component name="getMyPriceAlertRequest" >
-	    		<file>getMyPriceAlertRequest.xml</file>
-	    		<description>Method for Getting Details about methods</description>
+		<component name="getPriceAlertRequest" >
+	    		<file>getPriceAlertRequest.xml</file>
+	    		<description>Method for getting details about a price alert request</description>
 		</component>
-		<component name="getMyPriceAlertRequests" >
-	    		<file>getMyPriceAlertRequests.xml</file>
-	    		<description>Method for Getting Details about methods</description>
+		<component name="getPriceAlertRequests" >
+	    		<file>getPriceAlertRequests.xml</file>
+	    		<description>Method for getting detail about all price alert requests </description>
 		</component>
 		<component name="updateMyPriceAlertRequest" >
 	    		<file>updateMyPriceAlertRequest.xml</file>
-	    		<description>Method for Getting Details about methods</description>
+	    		<description>Method for updating a price alert request</description>
 		</component>
-		<component name="deleteMyPriceAlertRequest" >
-	    		<file>deleteMyPriceAlertRequest.xml</file>
-	    		<description>Method for Getting Details about methods</description>
+		<component name="deletePriceAlertRequest" >
+	    		<file>deletePriceAlertRequest.xml</file>
+	    		<description>Method for delete a price alert request</description>
 		</component>
 		<component name="pauseMyPriceAlertRequest" >
 	    		<file>pauseMyPriceAlertRequest.xml</file>
-	    		<description>Method for Getting Details about methods</description>
+	    		<description>Method for pause or resume a price alert request</description>
 		</component>
 
     </subComponents>

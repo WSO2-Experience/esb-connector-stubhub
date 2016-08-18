@@ -62,10 +62,6 @@
                 </StubHub.getEventDetails>
             </case>
                 <case regex="urn:getAccessToken">
-                    <StubHub.getAccessToken>
-                        <appToken>{$ctx:appToken}</appToken>
-                        <eventId>{$ctx:eventId}</eventId>
-                </StubHub.getAccessToken>
             </case>
             <case regex="urn:getVenueDetails">
                 <StubHub.getVenueDetails>
@@ -90,26 +86,26 @@
                     <pricingSummary>{$ctx:pricingSummary}</pricingSummary>
                 </StubHub.searchInventory>
             </case>
-                <case regex="urn:getMyPriceAlertRequests">
-                    <StubHub.getMyPriceAlertRequests>
+                <case regex="urn:getPriceAlertRequests">
+                    <StubHub.getPriceAlertRequests>
                         <accessToken>{$ctx:accessToken}</accessToken>
                         <userId>{$ctx:userId}</userId>
                         <eventId>{$ctx:eventId}</eventId>
-                    </StubHub.getMyPriceAlertRequests>
+                    </StubHub.getPriceAlertRequests>
                 </case>
-                <case regex="urn:getMyPriceAlertRequest">
-                    <StubHub.getMyPriceAlertRequest>
+                <case regex="urn:getPriceAlertRequest">
+                    <StubHub.getPriceAlertRequest>
                         <accessToken>{$ctx:accessToken}</accessToken>
                         <userId>{$ctx:userId}</userId>
                         <priceAlertRequestId>{$ctx:priceAlertRequestId}</priceAlertRequestId>
-                    </StubHub.getMyPriceAlertRequest>
+                    </StubHub.getPriceAlertRequest>
                 </case>
-                <case regex="urn:deleteMyPriceAlertRequest">
-                    <StubHub.deleteMyPriceAlertRequest>
+                <case regex="urn:deletePriceAlertRequest">
+                    <StubHub.deletePriceAlertRequest>
                         <accessToken>{$ctx:accessToken}</accessToken>
                         <userId>{$ctx:userId}</userId>
                         <priceAlertRequestId>{$ctx:priceAlertRequestId}</priceAlertRequestId>
-                    </StubHub.deleteMyPriceAlertRequest>
+                    </StubHub.deletePriceAlertRequest>
                 </case>
                 <case regex="urn:getMyListing">
                     <StubHub.getMyListing>
@@ -154,6 +150,7 @@
                         <quantity>{$ctx:quantity}</quantity>
                     </StubHub.createPriceAlert>
                 </case>
+
             </switch>
             <respond/>
         </inSequence>

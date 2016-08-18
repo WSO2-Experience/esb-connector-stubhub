@@ -2,10 +2,8 @@
   "accessToken":"%s(accessToken)",
   "apiUrl":"%s(apiUrl)",
   "userId":"%s(userId)",
+  "priceAlertRequestId":"invalid",
   "eventId":"%s(eventId)",
-  "amount":"%s(amount)",
-  "currency":"%s(currency)",
-  "quantity":"%s(quantity)",
-  "zones":"%s(zones)"
-
+  "pauseInd":"%s(pauseInd)"
 }
+

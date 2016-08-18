@@ -20,7 +20,7 @@
     <subComponents> 
 		<component name="getEventDetails" >
 	    		<file>getEventDetails.xml</file>
-	    		<description>Method for Getting Details about methods</description>
+	    		<description>Method for getting detail about an event</description>
 		</component>			
     </subComponents>    
 </component>

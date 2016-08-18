@@ -47,143 +47,381 @@ public class StubHubIntegrationTest extends ConnectorIntegrationTestBase {
         apiRequestHeadersMap.put("Content-Type", "application/json");
     }
 
-    @Test(priority = 1,enabled = true, groups = {"wso2.esb"}, description = "StubHub {getEventDetails} " +
-            "integration test with mandatory parameters.")
-    public void testGetAccessTokens() throws Exception {
-        esbRequestHeadersMap.put("Action", "urn:getAccessToken");
 
 
+/*
 
+    */
+/**
+     * Get information about a venue.
+     *
+     * @throws Exception
+     *//*
 
-        RestResponse<JSONObject> esbRestResponse =
-                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getEventDetails_mandatory.json");
-
-        printer(esbRestResponse,"FROM ESB **************************");
-
-
-
-    }
-
-
-
-    /*@Test(priority = 1,enabled = true, groups = {"wso2.esb"}, description = "StubHub {getEventDetails} " +
-            "integration test with mandatory parameters.")
-    public void testGetEventDetailsWithMandatoryParameters() throws Exception {
-        esbRequestHeadersMap.put("Action", "urn:getEventDetails");
-
-        final String appToken = connectorProperties.getProperty("appToken");
-        apiRequestHeadersMap.put("Authorization","Bearer " + appToken);
-
-        String apiEndPoint =
-                connectorProperties.getProperty("apiUrl") + "/catalog/events/v2/"
-                        + connectorProperties.getProperty("eventId");
-        printer(apiEndPoint,"");
-        RestResponse< JSONObject > apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
-        printer(apiRestResponse,"FROM API **************************");
-        Assert.assertEquals(apiRestResponse.getHttpStatusCode(),200);
-        RestResponse<JSONObject> esbRestResponse =
-                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getEventDetails_mandatory.json");
-
-        printer(esbRestResponse,"FROM ESB **************************");
-
-        Assert.assertEquals(esbRestResponse.getHttpStatusCode(),200);
-        Assert.assertEquals(esbRestResponse.getBody().get("id"),apiRestResponse.getBody().get("id"));
-        Assert.assertEquals(esbRestResponse.getBody().get("eventUrl")
-                ,apiRestResponse.getBody().get("eventUrl"));
-        Assert.assertEquals(esbRestResponse.getBody().get("eventDateUTC")
-                ,apiRestResponse.getBody().get("eventDateUTC"));
-        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("venue").get("id")
-                ,apiRestResponse.getBody().getJSONObject("venue").get("id"));
-        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("eventMeta").get("seoDescription")
-                ,apiRestResponse.getBody().getJSONObject("eventMeta").get("seoDescription"));
-
-    }
-
-
-    @Test(priority = 2,enabled = true, groups = {"wso2.esb"}, description = "StubHub {getEventDetails-Negative Case} integration test with mandatory parameters.")
-    public void testGetEventDetailsWithMandatoryParametersNegativeCase() throws Exception {
-        esbRequestHeadersMap.put("Action", "urn:getEventDetails");
-
-        final String appToken = connectorProperties.getProperty("appToken");
-        apiRequestHeadersMap.put("Authorization","Bearer " + appToken);
-
-        String apiEndPoint =
-                connectorProperties.getProperty("apiUrl") + "/catalog/events/v2/invalid";
-        RestResponse<JSONObject> esbRestResponse =
-                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getEventDetails_negative.json");
-        RestResponse< JSONObject > apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
-
-        Assert.assertEquals(esbRestResponse.getHttpStatusCode(),400);
-
-        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("errors").getJSONArray("error").getJSONObject(0).get("errorTypeId"),
-                apiRestResponse.getBody().getJSONObject("errors").getJSONArray("error").getJSONObject(0).get("errorTypeId"));
-    }
-
-    @Test(priority = 3,enabled = true,groups = {"wso2.esb"},description = "StubHub {getVenueDetails} integration test with mandatory parameters.")
-    public void testGetVenuesDetailsWithMandatoryParameters() throws Exception{
+    @Test(priority = 1, enabled = true, groups = {"wso2.esb"},
+            description = "StubHub {getVenueDetails with mandatory params}.")
+    public void testGetVenuesDetailsWithMandatoryParameters() throws Exception {
         esbRequestHeadersMap.put("Action", "urn:getVenueDetails");
         final String appToken = connectorProperties.getProperty("appToken");
-        apiRequestHeadersMap.put("Authorization","Bearer " + appToken);
-
-        String apiEndPoint =
-                connectorProperties.getProperty("apiUrl") + "/catalog/venues/v2/"
-                        + connectorProperties.getProperty("venueId");
+        apiRequestHeadersMap.put("Authorization", "Bearer " + appToken);
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/catalog/venues/v2/"
+                + connectorProperties.getProperty("venueId");
         RestResponse<JSONObject> esbRestResponse =
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getVenueDetails_mandatory.json");
-        RestResponse< JSONObject > apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
-
-        Assert.assertEquals(esbRestResponse.getHttpStatusCode(),200);
+        RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
+        Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
         Assert.assertEquals(esbRestResponse.getBody().get("id"), apiRestResponse.getBody().get("id"));
         Assert.assertEquals(esbRestResponse.getBody().get("name"), apiRestResponse.getBody().get("name"));
         Assert.assertEquals(esbRestResponse.getBody().get("description"), apiRestResponse.getBody().get("description"));
     }
 
-    @Test(priority = 4,enabled = true,groups = {"wso2.esb"},description = "StubHub {getVenueDetails - Negative Test Case} integration test with mandatory parameters.")
-    public void testGetVenuesDetailsWithMandatoryParametersNegativeTestCase() throws Exception{
+    */
+/**
+     * Negative case on getting information about a venue.
+     *
+     * @throws Exception
+     *//*
+
+    @Test(priority = 2, enabled = true, groups = {"wso2.esb"},
+            description = "StubHub {getVenueDetails with negative params}.")
+    public void testGetVenuesDetailsNegativeTestCase() throws Exception {
         esbRequestHeadersMap.put("Action", "urn:getVenueDetails");
         final String appToken = connectorProperties.getProperty("appToken");
-        apiRequestHeadersMap.put("Authorization","Bearer " + appToken);
-
-        String apiEndPoint =
-                connectorProperties.getProperty("apiUrl") + "/catalog/venues/v2/invalid";
+        apiRequestHeadersMap.put("Authorization", "Bearer " + appToken);
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/catalog/venues/v2/invalid";
         RestResponse<JSONObject> esbRestResponse =
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getVenueDetails_negative.json");
-        RestResponse< JSONObject > apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
-
-        Assert.assertEquals(esbRestResponse.getHttpStatusCode(),400);
+        RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
+        Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 400);
         Assert.assertEquals(esbRestResponse.getBody().getJSONObject("errors").
                         getJSONArray("error").getJSONObject(0).get("errorTypeId"),
                 apiRestResponse.getBody().getJSONObject("errors").
                         getJSONArray("error").getJSONObject(0).get("errorTypeId"));
     }
 
+    */
+/**
+     * Get information about a venue with optional parameters.
+     *
+     * @throws Exception
+     *//*
+
+    @Test(priority = 3, enabled = true, groups = {"wso2.esb"},
+            description = "StubHub {getVenueDetails with optional params}")
+    public void testGetVenuesDetailsWithOptionalParameters() throws Exception {
+        esbRequestHeadersMap.put("Action", "urn:getVenueDetails");
+        final String appToken = connectorProperties.getProperty("appToken");
+        apiRequestHeadersMap.put("Authorization", "Bearer " + appToken);
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/catalog/venues/v2/"
+                + connectorProperties.getProperty("venueId")
+                + "?locale=" + connectorProperties.getProperty("locale");
+        RestResponse<JSONObject> esbRestResponse =
+                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getVenueDetails_optional.json");
+        RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
+        Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
+        Assert.assertEquals(esbRestResponse.getBody().get("id"), apiRestResponse.getBody().get("id"));
+        Assert.assertEquals(esbRestResponse.getBody().get("name"), apiRestResponse.getBody().get("name"));
+        Assert.assertEquals(esbRestResponse.getBody().get("description"), apiRestResponse.getBody().get("description"));
+    }
+
+*/
 
 
-    @Test(priority = 5,enabled = true,groups = {"wso2.esb"},description = "StubHub {searchInventory - Mandatory} integration test with mandatory parameters.")
+
+/*
+    *//**
+     * Create a notification for an event according to the set of criteria.
+     *
+     * @throws Exception
+     *//*
+    @Test(priority = 4, enabled = true, groups = {"wso2.esb"},
+            description = "StubHub {createPriceAlert with mandatory params}.")
+    public void testCreatePriceAlert() throws Exception {
+        final String accessToken = connectorProperties.getProperty("accessToken");
+        apiRequestHeadersMap.put("Authorization", "Bearer " + accessToken);
+        esbRequestHeadersMap.put("Action", "urn:createPriceAlert");
+        RestResponse<JSONObject> esbRestResponseCreatePriceAlert =
+                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_createPriceAlert.json");
+        Assert.assertEquals(esbRestResponseCreatePriceAlert.getHttpStatusCode(), 201);
+        String priceAlertRequestId = esbRestResponseCreatePriceAlert.getBody().getJSONObject("priceAlert").getJSONObject("priceAlert")
+                .get("priceAlertId").toString();
+        connectorProperties.setProperty("priceAlertRequestId", priceAlertRequestId);
+    }*/
+/*
+    *//**
+     * Create a notification for an event but it is already created above.
+     *
+     * @throws Exception
+     *//*
+    @Test(priority = 5, enabled = true, groups = {"wso2.esb"},
+            description = "StubHub {createPriceAlert with negative case}.")
+    public void testCreatePriceAlertNegativeCase() throws Exception {
+        final String accessToken = connectorProperties.getProperty("accessToken");
+        apiRequestHeadersMap.put("Authorization", "Bearer " + accessToken);
+        esbRequestHeadersMap.put("Action", "urn:createPriceAlert");
+        RestResponse<JSONObject> esbRestResponse =
+                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_createPriceAlert.json");
+        Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 400);
+        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("priceAlert").getJSONObject("errors").
+                getJSONArray("error").getJSONObject(0).get("errorTypeId"), "105");
+    }
+
+    */
+/*
+
+    */
+/**
+     * Retrieves information about one of the user price alert requests the detail of a particular price alert
+     *
+     * @throws Exception
+     *//*
+
+    @Test(priority = 6, enabled = true, groups = {"wso2.esb"},
+            description = "StubHub {GetPriceAlertRequest with mandatory params}.")
+    public void testGetPriceAlertRequest() throws Exception {
+        esbRequestHeadersMap.put("Action", "urn:getPriceAlertRequest");
+        final String accessToken = connectorProperties.getProperty("accessToken");
+        apiRequestHeadersMap.put("Authorization", "Bearer " + accessToken);
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/user/customers/v1/"
+                + connectorProperties.getProperty("userId")
+                + "/pricealerts/" + connectorProperties.get("priceAlertRequestId");
+
+        RestResponse<JSONObject> apiRestResponseGetPriceAlert = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
+        RestResponse<JSONObject> esbRestResponseGetPriceAlert =
+                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getPriceAlertRequest_manadatory.json");
+        Assert.assertEquals(esbRestResponseGetPriceAlert.getHttpStatusCode(), 200);
+        Assert.assertEquals(esbRestResponseGetPriceAlert.getBody().getJSONObject("priceAlert").getJSONObject("priceAlert").get("priceAlertId"),
+                apiRestResponseGetPriceAlert.getBody().getJSONObject("priceAlert").getJSONObject("priceAlert").get("priceAlertId"));
+        Assert.assertEquals(esbRestResponseGetPriceAlert.getBody().getJSONObject("priceAlert")
+                        .getJSONObject("priceAlert").get("eventId"),
+                apiRestResponseGetPriceAlert.getBody().getJSONObject("priceAlert")
+                        .getJSONObject("priceAlert").get("eventId"));
+        Assert.assertEquals(esbRestResponseGetPriceAlert.getBody().getJSONObject("priceAlert")
+                        .getJSONObject("priceAlert").get("priceAlertId"),
+                apiRestResponseGetPriceAlert.getBody().getJSONObject("priceAlert")
+                        .getJSONObject("priceAlert").get("priceAlertId"));
+    }
+
+    */
+/**
+     * Get all information about price alerts create by user.
+     *
+     * @throws Exception
+     *//*
+
+    @Test(priority = 7, enabled = true, groups = {"wso2.esb"},
+            description = "StubHub {GetPriceAlertRequest with mandatory params}.")
+    public void testGetPriceAlertRequests() throws Exception {
+        esbRequestHeadersMap.put("Action", "urn:getPriceAlertRequests");
+        final String accessToken = connectorProperties.getProperty("accessToken");
+        apiRequestHeadersMap.put("Authorization", "Bearer " + accessToken);
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/user/customers/v1/"
+                + connectorProperties.getProperty("userId")
+                + "/pricealerts";
+        RestResponse<JSONObject> apiRestResponseGetPriceAlerts = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
+        RestResponse<JSONObject> esbRestResponseGetPriceAlerts =
+                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getPriceAlertRequests_mandatory.json");
+        Assert.assertEquals(esbRestResponseGetPriceAlerts.getHttpStatusCode(), 200);
+        Assert.assertEquals(esbRestResponseGetPriceAlerts.getBody().getJSONObject("priceAlert")
+                        .getJSONArray("priceAlert").getJSONObject(0).get("eventId"),
+                apiRestResponseGetPriceAlerts.getBody().getJSONObject("priceAlert")
+                        .getJSONArray("priceAlert").getJSONObject(0).get("eventId"));
+    }
+
+
+
+    */
+/**
+     * Get all information about a particular event price alert with optional parameter.
+     *
+     * @throws Exception
+     *//*
+
+    @Test(priority = 9, enabled = true, groups = {"wso2.esb"},
+            description = "StubHub {GetPriceAlertRequest with optional params}.")
+    public void testGetPriceAlertRequestsOptional() throws Exception {
+        esbRequestHeadersMap.put("Action", "urn:getPriceAlertRequests");
+        final String accessToken = connectorProperties.getProperty("accessToken");
+        apiRequestHeadersMap.put("Authorization", "Bearer " + accessToken);
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/user/customers/v1/"
+                + connectorProperties.getProperty("userId")
+                + "/pricealerts?eventId=" + connectorProperties.getProperty("eventId");
+        RestResponse<JSONObject> apiRestResponseGetPriceAlerts = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
+        RestResponse<JSONObject> esbRestResponseGetPriceAlerts =
+                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getPriceAlertRequests_optional.json");
+        Assert.assertEquals(esbRestResponseGetPriceAlerts.getHttpStatusCode(),200);
+        Assert.assertEquals(esbRestResponseGetPriceAlerts.getBody().getJSONObject("priceAlert")
+                        .getJSONObject("priceAlert").get("eventId"),
+                apiRestResponseGetPriceAlerts.getBody().getJSONObject("priceAlert")
+                        .getJSONObject("priceAlert").get("eventId"));
+    }
+
+    */
+/**
+     * Get all information about a particular event price alert with optional parameter.
+     *
+     * @throws Exception
+     *//*
+
+    @Test(priority = 10, enabled = true, groups = {"wso2.esb"},
+            description = "StubHub {GetPriceAlertRequest with negative params}.")
+    public void testGetPriceAlertRequestsNegative() throws Exception {
+        esbRequestHeadersMap.put("Action", "urn:getPriceAlertRequests");
+        final String accessToken = connectorProperties.getProperty("accessToken");
+        apiRequestHeadersMap.put("Authorization", "Bearer " + accessToken);
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/user/customers/v1/"
+                + connectorProperties.getProperty("userId")
+                + "/pricealerts?eventId=invalid" ;
+        RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
+        RestResponse<JSONObject> esbRestResponse =
+                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getPriceAlertRequests_negative.json");
+        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("priceAlert").getJSONObject("errors").
+                getJSONArray("error").getJSONObject(0).get("errorTypeId"), apiRestResponse.getBody().getJSONObject("priceAlert").getJSONObject("errors").
+                getJSONArray("error").getJSONObject(0).get("errorTypeId"));
+
+    }
+*/
+/*
+    *//**
+     * Pause or Resume a price alert request.
+     *
+     * @throws Exception
+     *//*
+    @Test(priority = 11, enabled = true, groups = {"wso2.esb"},
+            description = "StubHub {Pause/Resume price alert with mandatory params}.")
+    public void testPauseResumePriceAlertRequests() throws Exception {
+        esbRequestHeadersMap.put("Action", "urn:pauseMyPriceAlertRequest");
+        RestResponse<JSONObject> esbRestResponseGetPriceAlerts =
+                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_pausePriceAlertRequest_mandatory.json");
+
+        final String accessToken = connectorProperties.getProperty("accessToken");
+        apiRequestHeadersMap.put("Authorization", "Bearer " + accessToken);
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/user/customers/v1/"
+                + connectorProperties.getProperty("userId")
+                + "/pricealerts/"
+                + connectorProperties.getProperty("priceAlertRequestId");
+        RestResponse<JSONObject> apiRestResponseGetPriceAlerts = sendJsonRestRequest(apiEndPoint, "GET",
+                apiRequestHeadersMap);
+        Assert.assertEquals(esbRestResponseGetPriceAlerts.getHttpStatusCode(),200);
+        Assert.assertEquals(esbRestResponseGetPriceAlerts.getBody().getJSONObject("priceAlert")
+                .getJSONObject("priceAlert").get("pauseInd"),
+                apiRestResponseGetPriceAlerts.getBody().getJSONObject("priceAlert").getJSONObject("priceAlert").get("pauseInd"));
+        Assert.assertEquals(esbRestResponseGetPriceAlerts.getBody().getJSONObject("priceAlert")
+                .getJSONObject("priceAlert").get("priceAlertId"),
+                apiRestResponseGetPriceAlerts.getBody().getJSONObject("priceAlert")
+                        .getJSONObject("priceAlert").get("priceAlertId"));
+    }
+
+    *//**
+     * Pause or Resume a price alert negative case.
+     *
+     * @throws Exception
+     *//*
+    @Test(priority = 12, enabled = true, groups = {"wso2.esb"},
+            description = "StubHub {Pause/Resume price alert with negative params}.")
+    public void testPauseResumePriceAlertRequestsNegative() throws Exception {
+        esbRequestHeadersMap.put("Action", "urn:pauseMyPriceAlertRequest");
+        RestResponse<JSONObject> esbRestResponse =
+                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_pausePriceAlertRequest_negative.json");
+
+        final String accessToken = connectorProperties.getProperty("accessToken");
+        apiRequestHeadersMap.put("Authorization", "Bearer " + accessToken);
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/user/customers/v1/"
+                + connectorProperties.getProperty("userId")
+                + "/pricealerts/invalid";
+        RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET",
+                apiRequestHeadersMap,"api_PausePriceAlertRequest_negative.json");
+        printer(esbRestResponse,"ESB");
+        printer(apiRestResponse,"API");
+        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("priceAlert").getJSONObject("errors").
+                getJSONArray("error").getJSONObject(0).get("errorTypeId"),
+                apiRestResponse.getBody().getJSONObject("priceAlert").getJSONObject("errors").
+                getJSONArray("error").getJSONObject(0).get("errorTypeId"));
+    }
+
+    *//**
+     * update a particular price alert request.
+     *
+     * @throws Exception
+     *//*
+    @Test(priority = 13, enabled = true, groups = {"wso2.esb"},
+            description = "StubHub {Update a particular price alert with mandatory params}.")
+    public void testUpdatePriceAlertRequests() throws Exception {
+        esbRequestHeadersMap.put("Action", "urn:updateMyPriceAlertRequest");
+        RestResponse<JSONObject> esbRestResponse =
+                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_updatePriceAlertRequest.json");
+
+        final String accessToken = connectorProperties.getProperty("accessToken");
+        apiRequestHeadersMap.put("Authorization", "Bearer " + accessToken);
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/user/customers/v1/"
+                + connectorProperties.getProperty("userId")
+                + "/pricealerts/"
+                + connectorProperties.getProperty("priceAlertRequestId");
+        RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET",
+                apiRequestHeadersMap);
+        Assert.assertEquals(esbRestResponse.getHttpStatusCode(),200);
+        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("priceAlert")
+                        .getJSONObject("priceAlert").get("pauseInd"),
+                apiRestResponse.getBody().getJSONObject("priceAlert").getJSONObject("priceAlert").get("pauseInd"));
+    }
+
+
+    *//**
+     * Delete a price alert request
+     * @throws Exception
+     *//*
+    @Test(priority = 14, enabled = true, groups = {"wso2.esb"},
+            description = "StubHub {Delete a price alert with mandatory params}.")
+    public void testDeletePriceAlert() throws Exception {
+        final String accessToken = connectorProperties.getProperty("accessToken");
+        apiRequestHeadersMap.put("Authorization", "Bearer " + accessToken);
+        esbRequestHeadersMap.put("Action", "urn:deletePriceAlertRequest");
+        RestResponse<JSONObject> esbRestResponseDeletePriceAlert =
+                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_deletePriceAlertRequest.json");
+        Assert.assertEquals(esbRestResponseDeletePriceAlert.getHttpStatusCode(), 200);
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/user/customers/v1/"
+                + connectorProperties.getProperty("userId")
+                + "/pricealerts?eventId=" + connectorProperties.getProperty("eventId");
+        RestResponse<JSONObject> apiRestResponseGetPriceAlert = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
+        Assert.assertEquals(apiRestResponseGetPriceAlert.getHttpStatusCode(), 404);
+        Assert.assertEquals(apiRestResponseGetPriceAlert.getBody().getJSONObject("priceAlert").getJSONObject("errors")
+                .getJSONArray("error").getJSONObject(0).get("errorTypeId"), "101");
+    }
+    */
+
+    /**
+     * Search for ticket listings for an event
+     * @throws Exception
+     */
+    @Test(priority = 15,enabled = true,groups = {"wso2.esb"},
+            description = "StubHub {searchInventory with mandatory params}")
     public void testSearchInventoryWithMandatoryParameters() throws Exception{
         esbRequestHeadersMap.put("Action", "urn:searchInventory");
         final String appToken = connectorProperties.getProperty("appToken");
         apiRequestHeadersMap.put("Authorization","Bearer " + appToken);
-
         String apiEndPoint =
                 connectorProperties.getProperty("apiUrl") + "/search/inventory/v1?eventId="
                         + connectorProperties.getProperty("eventId");
         RestResponse<JSONObject> esbRestResponse =
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_searchInventory_mandatory.json");
-        RestResponse< JSONObject > apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
-
+        RestResponse< JSONObject > apiRestResponse =
+                sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(),200);
         Assert.assertEquals(esbRestResponse.getBody().get("totalListings"),apiRestResponse.getBody().get("totalListings"));
         Assert.assertEquals(esbRestResponse.getBody().get("start"),apiRestResponse.getBody().get("start"));
         Assert.assertEquals(esbRestResponse.getBody().get("rows"),apiRestResponse.getBody().get("rows"));
     }
 
-    @Test(priority = 6,enabled = true,groups = {"wso2.esb"},description = "StubHub {searchInventory- Mandatory - Negative Case} integration test with mandatory parameters.")
+    /**
+     * Search for ticket listings for an event - Negative Case
+     * @throws Exception
+     */
+    @Test(priority = 16,enabled = true,groups = {"wso2.esb"},
+            description = "StubHub {searchInventory Negative Case}.")
     public void testSearchInventoryWithMandatoryParametersNegativeCase() throws Exception {
         esbRequestHeadersMap.put("Action", "urn:searchInventory");
         final String appToken = connectorProperties.getProperty("appToken");
         apiRequestHeadersMap.put("Authorization", "Bearer " + appToken);
-
         String apiEndPoint =
                 connectorProperties.getProperty("apiUrl") + "/search/inventory/v1?eventId=invalid";
         RestResponse<JSONObject> esbRestResponse =
@@ -191,16 +429,18 @@ public class StubHubIntegrationTest extends ConnectorIntegrationTestBase {
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 400);
         Assert.assertEquals(esbRestResponse.getBody().get("code"),apiRestResponse.getBody().get("code"));
-    }*/
+    }
 
-
-
-   /* @Test(priority = 7,enabled = true,groups = {"wso2.esb"},description = "StubHub {searchInventory - Optional Parameters} integration test with optional parameters.")
+    /**
+     * Search for ticket listings for an event with optional parameters
+     * @throws Exception
+     */
+    @Test(priority = 17,enabled = true,groups = {"wso2.esb"},
+            description = "StubHub {searchInventory with optional params}.")
     public void testSearchInventoryWithOptionalParameters() throws Exception{
         esbRequestHeadersMap.put("Action", "urn:searchInventory");
         final String appToken = connectorProperties.getProperty("appToken");
         apiRequestHeadersMap.put("Authorization","Bearer " + appToken);
-
         String apiEndPoint =
                 connectorProperties.getProperty("apiUrl") + "/search/inventory/v1?eventId="
                         + connectorProperties.getProperty("eventId")
@@ -214,175 +454,64 @@ public class StubHubIntegrationTest extends ConnectorIntegrationTestBase {
                         + "&deliverytypelist=" + connectorProperties.getProperty("deliveryTypeList")
                         + "&zonestats=" + connectorProperties.getProperty("zoneStats")
                         + "&sectionstats=" + connectorProperties.getProperty("sectionStats")
-                        + "&pricingsummary=" + connectorProperties.getProperty("pricingSummary")
-                ;
-
+                        + "&pricingsummary=" + connectorProperties.getProperty("pricingSummary");
         RestResponse<JSONObject> esbRestResponse =
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_searchInventory_optional.json");
         RestResponse< JSONObject > apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
-
-
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
         Assert.assertEquals(esbRestResponse.getBody().get("totalListings"),apiRestResponse.getBody().get("totalListings"));
         Assert.assertEquals(esbRestResponse.getBody().get("start"),apiRestResponse.getBody().get("start"));
         Assert.assertEquals(esbRestResponse.getBody().get("rows"),apiRestResponse.getBody().get("rows"));
-    }*/
-
-
-     /*@Test(priority = 8, enabled = true,groups = {"wso2.esb"},description = "StubHub {getMyListing - Mandatory} integration test with mandatory parameters.")
-    public void testCreatePriceAlert() throws Exception{
-        final String accessToken = connectorProperties.getProperty("accessToken");
-        apiRequestHeadersMap.put("Authorization","Bearer " + accessToken);
-
-        //TODO Create Price Alert Using esb
-        esbRequestHeadersMap.put("Action", "urn:createPriceAlert");
-        RestResponse<JSONObject> esbRestResponseCreatePriceAlert =
-                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_createPriceAlert.json");
-
-        printer(esbRestResponseCreatePriceAlert,"ESB CREATE");
-        Assert.assertEquals(esbRestResponseCreatePriceAlert.getHttpStatusCode(),201);
-
-        String priceAlertRequestId = esbRestResponseCreatePriceAlert.getBody().getJSONObject("priceAlert").getJSONObject("priceAlert")
-                .get("priceAlertId").toString();
-
-
-
-        connectorProperties.setProperty("priceAlertRequestId",priceAlertRequestId);
     }
 
-
-
-
-    @Test(priority = 9,enabled = true, groups = {"wso2.esb"}, description = "StubHub {searchInventory - Mandatory} integration test with mandatory parameters.")
-    public void testGetPriceAlertRequest() throws Exception {
-        esbRequestHeadersMap.put("Action", "urn:getMyPriceAlertRequest");
-
-        final String accessToken = connectorProperties.getProperty("accessToken");
-        apiRequestHeadersMap.put("Authorization", "Bearer " + accessToken);
-        String apiEndPoint =
-                connectorProperties.getProperty("apiUrl") + "/user/customers/v1/"
-                        + connectorProperties.getProperty("userId")
-                        + "/pricealerts/" + connectorProperties.get("priceAlertRequestId");
-        RestResponse<JSONObject> apiRestResponseGetPriceAlert = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
-
-        RestResponse<JSONObject> esbRestResponseGetPriceAlert =
-                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getMyPriceAlertRequest_manadatory.json");
-
-        Assert.assertEquals(esbRestResponseGetPriceAlert.getHttpStatusCode(), 200);
-        printer(esbRestResponseGetPriceAlert, "ESB GET PRICE ALERT REQUEST");
-        printer(apiRestResponseGetPriceAlert, "API GET PRICE ALERT REQUEST");
-
-        Assert.assertEquals(esbRestResponseGetPriceAlert.getBody().getJSONObject("priceAlert").getJSONObject("priceAlert").get("priceAlertId"),
-                apiRestResponseGetPriceAlert.getBody().getJSONObject("priceAlert").getJSONObject("priceAlert").get("priceAlertId"));
-        Assert.assertEquals(esbRestResponseGetPriceAlert.getBody().getJSONObject("priceAlert")
-                        .getJSONObject("priceAlert").get("eventId"),
-                apiRestResponseGetPriceAlert.getBody().getJSONObject("priceAlert")
-                        .getJSONObject("priceAlert").get("eventId"));
-        Assert.assertEquals(esbRestResponseGetPriceAlert.getBody().getJSONObject("priceAlert")
-                        .getJSONObject("priceAlert").get("priceAlertId"),
-                apiRestResponseGetPriceAlert.getBody().getJSONObject("priceAlert")
-                        .getJSONObject("priceAlert").get("priceAlertId"));
-    }*/
-
-    /*
-        @Test(priority = 10,enabled = true, groups = {"wso2.esb"}, description = "StubHub {searchInventory - Mandatory} integration test with mandatory parameters.")
-        public void testGetPriceAlertRequests() throws Exception {
-            esbRequestHeadersMap.put("Action", "urn:getMyPriceAlertRequests");
-
-
-            final String accessToken = connectorProperties.getProperty("accessToken");
-            apiRequestHeadersMap.put("Authorization", "Bearer " + accessToken);
-            String apiEndPoint =
-                    connectorProperties.getProperty("apiUrl") + "/user/customers/v1/"
-                            + connectorProperties.getProperty("userId")
-                            + "/pricealerts";
-            RestResponse<JSONObject> apiRestResponseGetPriceAlerts = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
-
-            RestResponse<JSONObject> esbRestResponseGetPriceAlerts =
-                    sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getMyPriceAlertRequests_mandatory.json");
-
-            Assert.assertEquals(esbRestResponseGetPriceAlerts.getHttpStatusCode(),200);
-            Assert.assertEquals(esbRestResponseGetPriceAlerts.getBody().getJSONObject("priceAlert")
-                            .getJSONArray("priceAlert").getJSONObject(0).get("eventId"),
-                    apiRestResponseGetPriceAlerts.getBody().getJSONObject("priceAlert")
-                            .getJSONArray("priceAlert").getJSONObject(0).get("eventId"));
-
-            printer(apiRestResponseGetPriceAlerts, "API ALL REQUEST **********************************");
-            printer(esbRestResponseGetPriceAlerts, "ESB ALL REQUEST **********************************");
-
-        }
-
-
-
-        @Test(priority = 11,enabled = true,groups = {"wso2.esb"},description = "StubHub {getMyListing - Mandatory} integration test with mandatory parameters.")
-        public void testDeletePriceAlert() throws Exception{
-            //TODO Delete Earlier Created Price Alert
-            final String accessToken = connectorProperties.getProperty("accessToken");
-            apiRequestHeadersMap.put("Authorization","Bearer " + accessToken);
-
-            esbRequestHeadersMap.put("Action", "urn:deleteMyPriceAlertRequest");
-
-            RestResponse<JSONObject> esbRestResponseDeletePriceAlert =
-                    sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_deleteMyPriceAlertRequest.json");
-            Assert.assertEquals(esbRestResponseDeletePriceAlert.getHttpStatusCode(),200);
-
-            //TODO Check Price Alert is deleted or not
-            String apiEndPoint =
-                    connectorProperties.getProperty("apiUrl") + "/user/customers/v1/"
-                            + connectorProperties.getProperty("userId")
-                            + "/pricealerts?eventId=" + connectorProperties.getProperty("eventId");
-            RestResponse<JSONObject> apiRestResponseGetPriceAlert = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
-
-
-
-                Assert.assertEquals(apiRestResponseGetPriceAlert.getHttpStatusCode(), 404);
-                Assert.assertEquals(apiRestResponseGetPriceAlert.getBody().getJSONObject("priceAlert").getJSONObject("errors")
-                                .getJSONArray("error").getJSONObject(0).get("errorTypeId"),
-                        "101");
-
-        }*/
-/*
-
-    @Test(enabled = true,groups = {"wso2.esb"},description = "StubHub {getMyListings - Mandatory} integration test with mandatory parameters.")
-    public void testgetMyListingsWithMandatoryParameters() throws Exception{
-        esbRequestHeadersMap.put("Action", "urn:getMyListings");
-        final String accessToken = connectorProperties.getProperty("accessToken");
-        apiRequestHeadersMap.put("Authorization","Bearer " + accessToken);
-
-        String apiEndPoint = connectorProperties.getProperty("apiUrl")
-                +"/accountmanagement/listings/v1/seller/" + connectorProperties.getProperty("userId");
-
-
-        RestResponse<JSONObject> esbRestResponse =
-                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getMyListings_mandatory.json");
+    /**
+     * Get information about an event
+     * @throws Exception
+     */
+    @Test(priority = 18,enabled = true, groups = {"wso2.esb"},
+             description = "StubHub {getEventDetails with mandatory params}.")
+    public void testGetEventDetailsWithMandatoryParameters() throws Exception {
+        esbRequestHeadersMap.put("Action", "urn:getEventDetails");
+        final String appToken = connectorProperties.getProperty("appToken");
+        apiRequestHeadersMap.put("Authorization","Bearer " + appToken);
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/catalog/events/v2/"
+                        + connectorProperties.getProperty("eventId");
         RestResponse< JSONObject > apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
-
+        Assert.assertEquals(apiRestResponse.getHttpStatusCode(),200);
+        RestResponse<JSONObject> esbRestResponse =
+                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getEventDetails_mandatory.json");
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(),200);
-        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("listings").get("numFound"),apiRestResponse.getBody().getJSONObject("listings").get("numFound"));
+        Assert.assertEquals(esbRestResponse.getBody().get("id"),apiRestResponse.getBody().get("id"));
+        Assert.assertEquals(esbRestResponse.getBody().get("eventUrl")
+                ,apiRestResponse.getBody().get("eventUrl"));
+        Assert.assertEquals(esbRestResponse.getBody().get("eventDateUTC")
+                ,apiRestResponse.getBody().get("eventDateUTC"));
+        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("venue").get("id")
+                ,apiRestResponse.getBody().getJSONObject("venue").get("id"));
+        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("eventMeta").get("seoDescription")
+                ,apiRestResponse.getBody().getJSONObject("eventMeta").get("seoDescription"));
     }
 
-
-    @Test(enabled = true,groups = {"wso2.esb"},description = "StubHub {getMyListing - Mandatory} integration test with mandatory parameters.")
-    public void testgetMyListingWithMandatoryParameters() throws Exception{
-        esbRequestHeadersMap.put("Action", "urn:getMyListing");
-        final String accessToken = connectorProperties.getProperty("accessToken");
-        apiRequestHeadersMap.put("Authorization","Bearer " + accessToken);
-
-        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/accountmanagement/listings/v1/" + connectorProperties.getProperty("listingId");
-
+    /**
+     * Get information about an event with negative case
+     * @throws Exception
+     */
+    @Test(priority = 19,enabled = true, groups = {"wso2.esb"},
+            description = "StubHub {getEventDetails with negative case}.")
+    public void testGetEventDetailsWithMandatoryParametersNegativeCase() throws Exception {
+        esbRequestHeadersMap.put("Action", "urn:getEventDetails");
+        final String appToken = connectorProperties.getProperty("appToken");
+        apiRequestHeadersMap.put("Authorization","Bearer " + appToken);
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/catalog/events/v2/invalid";
         RestResponse<JSONObject> esbRestResponse =
-                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getMyListing_mandatory.json");
+                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getEventDetails_negative.json");
         RestResponse< JSONObject > apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
-        Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
-        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("listing").get("id"),apiRestResponse.getBody().getJSONObject("listing").get("id"));
-        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("listing").get("quantity"),apiRestResponse.getBody().getJSONObject("listing").get("quantity"));
-        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("listing").get("venueConfigSectionsId"),apiRestResponse.getBody().getJSONObject("listing").get("venueConfigSectionsId"));
-        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("listing").get("saleEndDate"),apiRestResponse.getBody().getJSONObject("listing").get("saleEndDate"));
-
+        Assert.assertEquals(esbRestResponse.getHttpStatusCode(),400);
+        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("errors")
+                        .getJSONArray("error").getJSONObject(0).get("errorTypeId"),
+                apiRestResponse.getBody().getJSONObject("errors")
+                        .getJSONArray("error").getJSONObject(0).get("errorTypeId"));
     }
-
-*/
-
 
 
     private void printer(RestResponse<JSONObject> response, String from) {

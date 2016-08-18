@@ -15,39 +15,23 @@
    specific language governing permissions and limitations
    under the License.
 -->
-<template xmlns="http://ws.apache.org/ns/synapse" name="getMyPriceAlertRequests">
+<template xmlns="http://ws.apache.org/ns/synapse" name="deletePriceAlertRequest">
     <!--Uri Template parameter-->
-    <parameter name="accessToken" description=""/>
-    <parameter name="userId" description=""/>
-
-    <!-- Query parameters -->
-    <parameter name="eventId" description="" />
+    <parameter name="accessToken" description="API access token"/>
+    <parameter name="userId" description="StubHub user ID"/>
+    <parameter name="priceAlertRequestId" description="Identifier for which price alert to be delete"/>
 
     <sequence>
         <property name="uri.var.accessToken" expression="$func:accessToken"/>
         <property name="uri.var.userId" expression="$func:userId"/>
-        <property name="uri.var.eventId" expression="$func:eventId"/>
-        <property name="uri.var.params" value=""/>
-
-        <script language="js">
-            <![CDATA[
-            var params = mc.getProperty('uri.var.params');
-            var eventId = mc.getProperty('uri.var.eventId');
-            if (eventId != null && eventId != "") {
-                params += "?eventId=" + eventId;
-            }
-             mc.setProperty('uri.var.params', params);
-           ]]>
-        </script>
-        <property name="messageType" value="application/json" scope="axis2"/>
-        <property name="DISABLE_CHUNKING" value="true" scope="axis2"/>
+        <property name="uri.var.priceAlertRequestId" expression="$func:priceAlertRequestId"/>
         <header name="Authorization"
                 expression="fn:concat('Bearer ', $ctx:uri.var.accessToken )"
                 scope="transport"/>
         <call>
             <endpoint>
-                <http method="get"
-                      uri-template="{uri.var.apiUrl}/user/customers/v1/{+uri.var.userId}/pricealerts{uri.var.params}"/>
+                <http method="delete"
+                      uri-template="{uri.var.apiUrl}/user/customers/v1/{+uri.var.userId}/pricealerts/{uri.var.priceAlertRequestId}"/>
             </endpoint>
         </call>
     </sequence>

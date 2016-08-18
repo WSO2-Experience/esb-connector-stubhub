@@ -20,7 +20,7 @@
     <subComponents>
         <component name="searchInventory" >
             <file>searchInventory.xml</file>
-            <description>searchInventory Method </description>
+            <description>Method for search ticket listings for an event</description>
         </component>
     </subComponents>
 </component>

@@ -17,14 +17,12 @@
 -->
 <template xmlns="http://ws.apache.org/ns/synapse" name="createPriceAlert">
     <!--Uri Template parameter-->
-    <parameter name="accessToken" description=""/>
-    <parameter name="userId" description=""/>
-    <parameter name="eventId" description="" />
-    <parameter name="amount" description="" />
-    <parameter name="currency" description="" />
-    <parameter name="quantity" description="" />
-
-    <!-- Query parameters -->
+    <parameter name="accessToken" description="API access token"/>
+    <parameter name="userId" description="StubHub user ID"/>
+    <parameter name="eventId" description="Event ID of the event need to create price alert"/>
+    <parameter name="amount" description="Ticket price no more than this amount value"/>
+    <parameter name="currency" description="Currency of the Money"/>
+    <parameter name="quantity" description="Quantity of the tickets for creating price alert"/>
 
     <sequence>
         <property name="uri.var.accessToken" expression="$func:accessToken"/>

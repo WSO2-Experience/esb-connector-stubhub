@@ -18,24 +18,22 @@
 <template xmlns="http://ws.apache.org/ns/synapse" name="searchInventory">
     <!--Uri Template parameter-->
 
-    <parameter name="appToken" description=""/>
-    <parameter name="eventId" description=""/>
-    <parameter name="zoneIdList" description="" />
-    <parameter name="sectionIdList" description="" />
-    <parameter name="quantity" description="" />
-    <parameter name="priceMin" description="" />
-    <parameter name="priceMax" description="" />
-    <parameter name="listingAttributeList" description="" />
-    <parameter name="listingAttributeCategoryList" description="" />
+    <parameter name="appToken" description="Application token"/>
+    <parameter name="eventId" description="Event ID"/>
+    <parameter name="zoneIdList" description="Zone IDs for an event" />
+    <parameter name="sectionIdList" description="Section IDs for an event" />
+    <parameter name="quantity" description="Tickets quantity" />
+    <parameter name="priceMin" description="Minimum price for a ticket" />
+    <parameter name="priceMax" description="Maximum price for a ticket" />
+    <parameter name="listingAttributeList" description="Listing attribute list IDs" />
+    <parameter name="listingAttributeCategoryList" description="Listing attribute category list" />
     <parameter name="deliveryTypeList" description="" />
-    <parameter name="sort" description="" />
-    <parameter name="start" description="" />
-    <parameter name="rows" description="" />
-    <parameter name="zoneStats" description="" />
-    <parameter name="sectionStats" description="" />
-    <parameter name="pricingSummary" description="" />
-
-
+    <parameter name="sort" description="Sorting the listing information according to the listing property" />
+    <parameter name="start" description="Index of the first listing to be returned" />
+    <parameter name="rows" description="Number of listings to be released" />
+    <parameter name="zoneStats" description="Information about the listing zones needed or not" />
+    <parameter name="sectionStats" description="Information about section needed or not" />
+    <parameter name="pricingSummary" description="Information about pricing needed or not" />
 
     <sequence>
         <property name="uri.var.appToken" expression="$func:appToken"/>
@@ -128,7 +126,7 @@
         <call>
             <endpoint>
                 <http method="get"
-                      uri-template="legacy-encoding:{uri.var.apiUrl}/search/inventory/v1?eventid={uri.var.eventId}{uri.var.params}"/>
+                      uri-template="{uri.var.apiUrl}/search/inventory/v1?eventid={+uri.var.eventId}{+uri.var.params}"/>
             </endpoint>
         </call>
     </sequence>

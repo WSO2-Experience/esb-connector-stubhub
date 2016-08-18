@@ -15,14 +15,11 @@
    specific language governing permissions and limitations
    under the License.
 -->
-<template xmlns="http://ws.apache.org/ns/synapse" name="getMyPriceAlertRequest">
+<template xmlns="http://ws.apache.org/ns/synapse" name="getPriceAlertRequest">
     <!--Uri Template parameter-->
-    <parameter name="accessToken" description=""/>
-    <parameter name="userId" description=""/>
-    <parameter name="priceAlertRequestId" description="" />
-
-    <!-- Query parameters -->
-
+    <parameter name="accessToken" description="API access token"/>
+    <parameter name="userId" description="StubHub user ID"/>
+    <parameter name="priceAlertRequestId" description="Price Alert Request ID" />
     <sequence>
         <property name="uri.var.accessToken" expression="$func:accessToken"/>
         <property name="uri.var.userId" expression="$func:userId"/>
