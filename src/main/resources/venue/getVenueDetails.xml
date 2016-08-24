@@ -14,12 +14,10 @@
 -->
 <template xmlns="http://ws.apache.org/ns/synapse" name="getVenueDetails">
     <!--Uri Template parameter-->
-    <parameter name="appToken" description="stubhub account - application token"/>
     <parameter name="venueId" description="This is the venue id need to get the information about a place/venue"/>
     <!-- Query parameters -->
     <parameter name="locale" description="This indicates that which are the strings are translated"/>
     <sequence>
-        <property name="uri.var.appToken" expression="$func:appToken"/>
         <property name="uri.var.venueId" expression="$func:venueId"/>
         <property name="uri.var.locale" expression="$func:locale"/>
         <property name="uri.var.params" value=""/>
@@ -36,13 +34,11 @@
         </script>
         <property name="messageType" value="application/json" scope="axis2"/>
         <property name="DISABLE_CHUNKING" value="true" scope="axis2"/>
-        <header name="Authorization"
-                expression="fn:concat('Bearer ', $ctx:uri.var.appToken )"
-                scope="transport"/>
+
         <call>
             <endpoint>
                 <http method="get"
-                      uri-template="{uri.var.apiUrl}/catalog/venues/v2/{+uri.var.venueId}{+uri.var.params}"/>
+                      uri-template="{uri.var.apiUrl}/catalog/venues/v2/{uri.var.venueId}{+uri.var.params}"/>
             </endpoint>
         </call>
     </sequence>

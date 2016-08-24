@@ -16,20 +16,20 @@
    under the License.
 -->
 <template xmlns="http://ws.apache.org/ns/synapse" name="getAccessToken">
-    <parameter name="consumerKey" description=""/>
-    <parameter name="consumerSecret" description=""/>
-    <parameter name="username" description=""/>
-    <parameter name="password" description=""/>
-    <parameter name="scope" description=""/>
+    <parameter name="consumerKey" description="StubHub user consumer key"/>
+    <parameter name="consumerSecret" description="StubHub user consumer secret"/>
+    <parameter name="username" description="StubHub username"/>
+    <parameter name="password" description="StubHub user password"/>
+    <parameter name="scope" description="Scope of the access token PRODUCTION or TESTING"/>
     <sequence>
         <property name="uri.var.consumerKey" expression="$func:consumerKey"
                   scope="default" type="STRING"/>
         <property name="uri.var.consumerSecret" expression="$func:consumerSecret"
                   scope="default" type="STRING"/>
         <property name="grant_type" value="password" scope="default" type="STRING"/>
-        <property name="uri.var.username" expression="$func:username" scope="default" type="STRING"/>/>
-        <property name="uri.var.password" expression="$func:password" scope="default" type="STRING"/>/>
-        <property name="uri.var.scope" expression="$func:scope" scope="default" type="STRING"/>/>
+        <property name="username" expression="$func:username" scope="default" type="STRING"/>/>
+        <property name="password" expression="$func:password" scope="default" type="STRING"/>/>
+        <property name="scope" expression="$func:scope" scope="default" type="STRING"/>/>
         <payloadFactory media-type="xml">
             <format>
                 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
@@ -45,13 +45,14 @@
                 </soapenv:Envelope>
             </format>
             <args>
-                <arg expression="$ctx:uri.var.username"/>
-                <arg expression="$ctx:uri.var.password"/>
-                <arg expression="$ctx:uri.var.scope"/>
+                <arg expression="$ctx:username"/>
+                <arg expression="$ctx:password"/>
+                <arg expression="$ctx:scope"/>
             </args>
         </payloadFactory>
         <header name="Authorization"
-                expression="fn:concat('Basic ',base64Encode(fn:concat(get-property('consumerKey'),':',get-property('consumerSecret'))))"
+                expression="fn:concat('Basic ',base64Encode(fn:concat(get-property('consumerKey'),':'
+                ,get-property('consumerSecret'))))"
                 scope="transport"/>
         <header name="Content-Type" value="application/x-www-form-urlencoded" scope="transport"/>
         <property name="messageType" value="application/x-www-form-urlencoded"

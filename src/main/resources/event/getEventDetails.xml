@@ -16,17 +16,10 @@
    under the License.
 -->
 <template xmlns="http://ws.apache.org/ns/synapse" name="getEventDetails">
-    <parameter name="appToken" description="Application token"/>
     <parameter name="eventId" description="Event ID"/>
     <sequence>
-        <property name="uri.var.appToken" expression="$func:appToken"/>
         <property name="uri.var.eventId" expression="$func:eventId"/>
         <property name="messageType" value="application/json" scope="axis2"/>
-
-        <header name="Authorization"
-                expression="fn:concat('Bearer ', $ctx:uri.var.appToken )"
-                scope="transport"/>
-        <log level="full"/>
         <call>
             <endpoint>
                 <http method="get"

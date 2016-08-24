@@ -18,7 +18,6 @@
 <template xmlns="http://ws.apache.org/ns/synapse" name="searchInventory">
     <!--Uri Template parameter-->
 
-    <parameter name="appToken" description="Application token"/>
     <parameter name="eventId" description="Event ID"/>
     <parameter name="zoneIdList" description="Zone IDs for an event" />
     <parameter name="sectionIdList" description="Section IDs for an event" />
@@ -36,41 +35,40 @@
     <parameter name="pricingSummary" description="Information about pricing needed or not" />
 
     <sequence>
-        <property name="uri.var.appToken" expression="$func:appToken"/>
         <property name="uri.var.eventId" expression="$func:eventId"/>
-        <property name="uri.var.zoneIdList" expression="$func:zoneIdList"/>
-        <property name="uri.var.sectionIdList" expression="$func:sectionIdList"/>
-        <property name="uri.var.quantity" expression="$func:quantity"/>
-        <property name="uri.var.priceMin" expression="$func:priceMin"/>
-        <property name="uri.var.priceMax" expression="$func:priceMax"/>
-        <property name="uri.var.listingAttributeList" expression="$func:listingAttributeList"/>
-        <property name="uri.var.listingAttributeCategoryList" expression="$func:listingAttributeCategoryList"/>
-        <property name="uri.var.deliveryTypeList" expression="$func:deliveryTypeList"/>
-        <property name="uri.var.sort" expression="$func:sort"/>
-        <property name="uri.var.start" expression="$func:start"/>
-        <property name="uri.var.rows" expression="$func:rows"/>
-        <property name="uri.var.zoneStats" expression="$func:zoneStats"/>
-        <property name="uri.var.sectionStats" expression="$func:sectionStats"/>
-        <property name="uri.var.pricingSummary" expression="$func:pricingSummary"/>
+        <property name="zoneIdList" expression="$func:zoneIdList"/>
+        <property name="sectionIdList" expression="$func:sectionIdList"/>
+        <property name="quantity" expression="$func:quantity"/>
+        <property name="priceMin" expression="$func:priceMin"/>
+        <property name="priceMax" expression="$func:priceMax"/>
+        <property name="listingAttributeList" expression="$func:listingAttributeList"/>
+        <property name="listingAttributeCategoryList" expression="$func:listingAttributeCategoryList"/>
+        <property name="deliveryTypeList" expression="$func:deliveryTypeList"/>
+        <property name="sort" expression="$func:sort"/>
+        <property name="start" expression="$func:start"/>
+        <property name="rows" expression="$func:rows"/>
+        <property name="zoneStats" expression="$func:zoneStats"/>
+        <property name="sectionStats" expression="$func:sectionStats"/>
+        <property name="pricingSummary" expression="$func:pricingSummary"/>
         <property name="uri.var.params" value=""/>
-
+        <!-- TODO Normal Names -->
         <script language="js">
             <![CDATA[
             var params = mc.getProperty('uri.var.params');
-            var zoneIdList = mc.getProperty('uri.var.zoneIdList');
-            var sectionIdList = mc.getProperty('uri.var.sectionIdList');
-            var quantity = mc.getProperty('uri.var.quantity');
-            var priceMin = mc.getProperty('uri.var.priceMin');
-            var priceMax = mc.getProperty('uri.var.priceMax');
-            var listingAttributeList = mc.getProperty('uri.var.listingAttributeList');
-            var listingAttributeCategoryList = mc.getProperty('uri.var.listingAttributeCategoryList');
-            var deliveryTypeList = mc.getProperty('uri.var.deliveryTypeList');
-            var sort = mc.getProperty('uri.var.sort');
-            var start = mc.getProperty('uri.var.start');
-            var rows = mc.getProperty('uri.var.rows');
-            var zoneStats = mc.getProperty('uri.var.zoneStats');
-            var sectionStats = mc.getProperty('uri.var.sectionStats');
-            var pricingSummary = mc.getProperty('uri.var.pricingSummary');
+            var zoneIdList = mc.getProperty('zoneIdList');
+            var sectionIdList = mc.getProperty('sectionIdList');
+            var quantity = mc.getProperty('quantity');
+            var priceMin = mc.getProperty('priceMin');
+            var priceMax = mc.getProperty('priceMax');
+            var listingAttributeList = mc.getProperty('listingAttributeList');
+            var listingAttributeCategoryList = mc.getProperty('listingAttributeCategoryList');
+            var deliveryTypeList = mc.getProperty('deliveryTypeList');
+            var sort = mc.getProperty('sort');
+            var start = mc.getProperty('start');
+            var rows = mc.getProperty('rows');
+            var zoneStats = mc.getProperty('zoneStats');
+            var sectionStats = mc.getProperty('sectionStats');
+            var pricingSummary = mc.getProperty('pricingSummary');
 
             if (zoneIdList != null && zoneIdList != "") {
                 params += "&zoneidlist=" + zoneIdList;
@@ -120,13 +118,10 @@
         </script>
         <property name="messageType" value="application/json" scope="axis2"/>
         <property name="DISABLE_CHUNKING" value="true" scope="axis2"/>
-        <header name="Authorization"
-                expression="fn:concat('Bearer ', $ctx:uri.var.appToken )"
-                scope="transport"/>
         <call>
             <endpoint>
                 <http method="get"
-                      uri-template="{uri.var.apiUrl}/search/inventory/v1?eventid={+uri.var.eventId}{+uri.var.params}"/>
+                      uri-template="{uri.var.apiUrl}/search/inventory/v1?eventid={uri.var.eventId}{+uri.var.params}"/>
             </endpoint>
         </call>
     </sequence>

@@ -52,6 +52,7 @@
 
             <StubHub.init>
                 <apiUrl>{$ctx:apiUrl}</apiUrl>
+                <appToken>{$ctx:appToken}</appToken>
             </StubHub.init>
 
             <switch source="get-property('transport', 'Action')">

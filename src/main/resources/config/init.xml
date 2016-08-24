@@ -18,15 +18,18 @@
 -->
 <template name="init" onError="fault" xmlns="http://ws.apache.org/ns/synapse">
 
-	<parameter name="apiUrl" description="" />
+    <parameter name="apiUrl" description="API endpoint URL"/>
+    <parameter name="appToken" description="Application Token"/>
 
+    <sequence>
+        <property name="uri.var.apiUrl" expression="$func:apiUrl"/>
+        <property name="uri.var.appToken" expression="$func:appToken"/>
 
+        <StubHub.getAccessToken/>
+        <property name="uri.var.accessToken" expression="json-eval($.access_token)"/>
 
-	<sequence>
-
-		<property name="uri.var.apiUrl" expression="$func:apiUrl"/>
-		<header name="Content-Type" value="application/json" scope="transport"/>
-		<header name="Accept" value="application/json" scope="transport"/>
-
-	</sequence>
+        <header name="Content-Type" value="application/json" scope="transport"/>
+        <header name="Accept" value="application/json" scope="transport"/>
+        <header name="Authorization" expression="fn:concat('Bearer ', $ctx:uri.var.appToken )" scope="transport"/>
+    </sequence>
 </template>

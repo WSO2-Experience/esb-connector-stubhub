@@ -27,39 +27,39 @@
     <sequence>
         <property name="uri.var.accessToken" expression="$func:accessToken"/>
         <property name="uri.var.userId" expression="$func:userId"/>
-        <property name="uri.var.eventId" expression="$func:eventId"/>
-        <property name="uri.var.amount" expression="$func:amount"/>
-        <property name="uri.var.currency" expression="$func:currency"/>
-        <property name="uri.var.quantity" expression="$func:quantity"/>
+        <property name="eventId" expression="$func:eventId"/>
+        <property name="amount" expression="$func:amount"/>
+        <property name="currency" expression="$func:currency"/>
+        <property name="quantity" expression="$func:quantity"/>
         <payloadFactory media-type="json">
             <format>
                 {
-                "priceAlert": {
-                "eventId": "$1",
-                "maxTicketPrice": {
-                "amount": "$2",
-                "currency": "$3"
-                },
-                "quantity": "$4"
-                }
+                    "priceAlert": {
+                        "eventId": "$1",
+                        "maxTicketPrice": {
+                            "amount": "$2",
+                            "currency": "$3"
+                        },
+                        "quantity": "$4"
+                    }
                 }
             </format>
             <args>
-                <arg expression="$ctx:uri.var.eventId"/>
-                <arg expression="$ctx:uri.var.amount"/>
-                <arg expression="$ctx:uri.var.currency"/>
-                <arg expression="$ctx:uri.var.quantity"/>
+                <arg expression="$ctx:eventId"/>
+                <arg expression="$ctx:amount"/>
+                <arg expression="$ctx:currency"/>
+                <arg expression="$ctx:quantity"/>
             </args>
         </payloadFactory>
         <property name="messageType" value="application/json" scope="axis2"/>
         <property name="DISABLE_CHUNKING" value="true" scope="axis2"/>
-        <header name="Authorization"
-                expression="fn:concat('Bearer ', $ctx:uri.var.accessToken )"
-                scope="transport"/>
+
+        <header name="Authorization" scope="transport" action="remove"/>
+        <header name="Authorization" expression="fn:concat('Bearer ', $ctx:uri.var.accessToken )" scope="transport"/>
         <call>
             <endpoint>
                 <http method="post"
-                      uri-template="{uri.var.apiUrl}/user/customers/v1/{+uri.var.userId}/pricealerts"/>
+                      uri-template="{uri.var.apiUrl}/user/customers/v1/{uri.var.userId}/pricealerts"/>
             </endpoint>
         </call>
 

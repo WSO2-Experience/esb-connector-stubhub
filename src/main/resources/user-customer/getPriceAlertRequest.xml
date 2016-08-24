@@ -30,7 +30,7 @@
         <call>
             <endpoint>
                 <http method="get"
-                      uri-template="{uri.var.apiUrl}/user/customers/v1/{+uri.var.userId}/pricealerts/{uri.var.priceAlertRequestId}"/>
+                      uri-template="{uri.var.apiUrl}/user/customers/v1/{uri.var.userId}/pricealerts/{uri.var.priceAlertRequestId}"/>
             </endpoint>
         </call>
     </sequence>
